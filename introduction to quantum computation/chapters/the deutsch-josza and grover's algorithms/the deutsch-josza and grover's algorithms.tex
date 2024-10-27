@@ -1,0 +1,458 @@
+\chapter{The Deutsch-Josza and Grover's algorithms}\label{chap:the deutsch-josza and grover's algorithms}\chaptertoc{}
+
+This chapter is devoted to explaining two partially connected of the (few) known quantum algorithms -- which are, those algorithms presenting an effective quantum advantage with respect to classical computation. By quantum advantage, we mean precisely that performing the same task on classical hardware and quantum hardware require a (much) different number of steps, in terms of computational time.
+
+The first one was proposed by David Deutsch and Richard Josza in 1992. This algorithm, even if of little practical use, solves the following problem exponentially faster than classical computers: we aim to find out a specific property of a given unknown binary function $f$ acting on our (qu)bits. The first section is devoted to it.
+
+The second one was proposed by Lov Grover four years later, and is of major practical interest: it is able to perform a database search with a certain quantum advantage. We expand in the Sec.~\ref{sec:grover's algorithm}.
+
+\section{Deutsch-Josza algorithm}\label{sec:deutsch-josza algorithm}
+
+We start by a somewhat ``reduced'' version of the Deutsch-Josza algorithm. Let $f$ be an unknown function acting on the computational basis,
+\[
+    f \colon \lbrace 0,1 \rbrace \to \lbrace 0,1 \rbrace
+\]
+Of course the number of possible functions is very small. Anyhow the function acts, we define it \textbf{constant} or \textbf{balanced} if
+\[
+\begin{aligned}
+    f(0) \oplus f(1) = 0 &\quad\implies\quad f(0) = f(1)
+    &&\qquad\text{$f$ is constant}\\
+    f(0) \oplus f(1) = 1 &\quad\implies\quad f(0) \neq f(1)
+    &&\qquad\text{$f$ is balanced}
+\end{aligned}
+\]
+Suppose also we are provided with a $2$-qubit ``oracle'' gate,
+\begin{center}
+    \begin{quantikz}
+        \lstick{$\ket{x}$} & \gate[2]{U_f} & \rstick[2]{output} \\
+        \lstick{$\ket{y}$} & &
+    \end{quantikz}
+\end{center}
+a sort of ``black box'' able to implement $f$. We do not need to know how it works physically in order to study the algorithm. Let $x,y \in \lbrace 0,1 \rbrace$. $U_f$ acts as
+\[
+    U_f \ket{x} \otimes \ket{y} = \ket{x} \otimes \ket{y \oplus f(x)}
+\]
+
+The problem we aim to solve is: how do we know if $f$ is constant or balanced? How many calls to the oracle, $U_f$, are needed?
+Classically, we would need to call the oracle twice: one for input $0$, one for input $1$, measuring the result each time. Can we do better? Take now the following circuit
+\begin{center}
+    \begin{quantikz}
+        \lstick{$\ket{0}$} & \gate{H} & \gate[2]{U_f} & \gate{H} & \meter{} \\
+        \lstick{$\ket{-}$} & & & & \rstick{$\ket{-}$}
+    \end{quantikz}
+\end{center}
+where the symbol \begin{quantikz}
+    \meter{}
+\end{quantikz} represents measurement. To understand what happens, let us break down the circuit in steps.
+\begin{center}
+    \begin{quantikz}[slice all,slice style={color=palette-main},slice titles=$\ket{\psi_\col}$]
+        \lstick{$\ket{0}$} & & \gate{H} & \gate[2]{U_f} & \gate{H} & \meter{} \\
+        \lstick{$\ket{-}$} & & & & & \rstick{$\ket{-}$}
+    \end{quantikz}
+\end{center}
+\begin{enumerate}
+    \item The initial state is simply
+    \[
+        \ket{\psi_1} = \ket{0} \otimes \ket{-} = \ket{0} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+    \item The Hadamard gate maps the state to
+    \[
+        \ket{\psi_2} = \lrS{H \otimes \Id} \ket{\psi_1} = \ket{+} \otimes \ket{-} = \frac{\ket{0} + \ket{1}}{\sqrt{2}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+    \item The function is implemented:
+    \[
+    \begin{aligned}
+        \ket{\psi_3} &= U_f \ket{\psi_2} \\
+        &= \frac{\ket{0}}{\sqrt{2}} \otimes \frac{\ket{0 \oplus f(0)} - \ket{1 \oplus f(0)}}{\sqrt{2}} + \frac{\ket{1}}{\sqrt{2}} \otimes \frac{\ket{0 \oplus f(1)} - \ket{1 \oplus f(1)}}{\sqrt{2}} \\
+        &= (-1)^{f(0)} \frac{\ket{0}}{\sqrt{2}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}} + (-1)^{f(1)} \frac{\ket{1}}{\sqrt{2}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}} \\
+        &= (-1)^{f(0)} \frac{\ket{0} + (-1)^{f(0) \oplus f(1)} \ket{1}}{\sqrt{2}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \end{aligned}
+    \]
+    We made use of the so-called \textbf{phase kick-back} through the second passage (see Sec.~\ref{subsec:some comments on the ``phase kick-back''}).
+    \item Finally, the Hadamard gate is applied
+    \[
+        \ket{\psi_4} = \lrS{H \otimes \Id} \ket{\psi_3}
+    \]
+    We know that $H \ket{+} = \ket{0}$, $H \ket{-} = \ket{1}$. This implies
+    \[
+    \begin{aligned}
+        f(0) \oplus f(1) = 0 \quad&\implies\quad \ket{\psi_4} = \ket{0} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}} \\
+        f(0) \oplus f(1) = 1 \quad&\implies\quad \ket{\psi_4} = \ket{1} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \end{aligned}
+    \]
+\end{enumerate}
+Then, we actually need \textbf{just one call to the ``oracle''} to find out if $f$ is balanced or constant: just by measuring the first qubit, if the result is $0$ the function is constant, if the result is $1$ the function is balanced.
+
+\subsection{Matrix representation of the ``oracle''}
+
+Before passing on to the $n$-qubits version of the algorithm, we briefly give a matrix representation of the algorithm. We make use the following Ansatz
+\[
+    U_f = \op{0} \otimes U_0 + \op{1} \otimes U_1
+\]
+being $U_0$ and $U_1$ single-qubit operators. Such Ansatz makes sense: by definition
+\[
+    U_f \ket{x} \otimes \ket{y} = \ket{x} \otimes \ket{y \oplus f(x)}
+\]
+thus if $f=0$ the action on the second qubit is null, and it is not if $f=1$. We compute $U_0$ element-wise,
+\[
+    \lrS{U_0}_{00} = \mel{0}{U_0}{0} = \braket{0}{0 \oplus f(0)} = \braket{0}{f(0)} = \Bar{f}(0)
+\]
+with $\Bar{f}(0)$ the logical negation of $f(0)$. By the same means one gets
+\[
+    \lrS{U_0} = \begin{bmatrix}
+        \Bar{f}(0) & f(0) \\
+        f(0) & \Bar{f}(0)
+    \end{bmatrix} = \Bar{f}(0) \Id + f(0) X
+\]
+and equivalently
+\[
+    \lrS{U_1} = \begin{bmatrix}
+        \Bar{f}(1) & f(1) \\
+        f(1) & \Bar{f}(1)
+    \end{bmatrix} = \Bar{f}(1) \Id + f(1) X
+\]
+Then we can give a $2^2 \times 2^2$ matrix representation for $U_f$,
+\[
+    \lrS{U_f} = \begin{bmatrix}
+        \Bar{f}(0) & f(0) & & \\
+        f(0) & \Bar{f}(0) & & \\
+        & & \Bar{f}(1) & f(1) \\
+        & & f(1) & \Bar{f}(1)
+    \end{bmatrix}
+\]
+To compute such matrix can be done for a small number of qubits; the task rapidly diverges for $n>1$ input qubits.
+
+\subsection{Some comments on the ``phase kick-back''}\label{subsec:some comments on the ``phase kick-back''}
+
+By ``phase kick-back'' we refer to those controlled actions having effect on the controls rather than the targets. Take for example the $\cnot$ operator,
+\[
+    \cnot = \begin{quantikz}
+        \lstick{$c$} & \ctrl{1} & \\
+        \lstick{$t$} & \targ{} &
+    \end{quantikz}
+\]
+We identify the control as the state ``being read'' and the target as the one ``being acted upon''. However, let the target be in the $\ket{-}$ state. Then, being $X\ket{-} = -\ket{-}$
+\[
+    \cnot \ket{0} \otimes \ket{-} = \ket{0} \otimes \ket{-}
+    \qquad
+    \cnot \ket{1} \otimes \ket{-} = - \ket{1} \otimes \ket{-}
+\]
+We can interpret the result as the target remaining unchanged, and the control undergoing a $\pi$ phase shift. Under this perspective we may interchange the roles of control and target. Take as well the control to be in the $\ket{+}$ state: then
+\[
+    \cnot \ket{+} \otimes \ket{-} = \ket{-} \otimes \ket{-}
+\]
+Just by using a different basis we were able to ``exchange roles''. This is what we did in step 3 of the computation discussed in the above section: even if the second state is strictly speaking the target of $U_f$, the real action of the operator is a phase shift of the control.
+
+\subsection{Full implementation on $n$-qubits input}
+
+Let us extend the previous result to a more interesting situation. Let $f$ be a function of the kind
+\[
+    f \colon \lbrace 0,1 \rbrace^{\otimes n} \to \lbrace 0,1 \rbrace
+\]
+thus taking as input a binary string of length $n$ (any integer number up to $2^{n-1}+1$) and giving back as output a single bit. Here we assume that $f$ is \textit{either} constant or balanced. On $n$-qubits, we expand the definition of a ``balanced function'' as one equal to $0$ on half of the domain and to $1$ on the other half. We stress that we are assuming $f$ to be this way. \Comment{Expand...}
+
+The full circuit is here given by
+\begin{center}
+    \begin{quantikz}[slice all,slice style={color=palette-main},slice titles=$\ket{\psi_\col}$]
+        \lstick{$1 \colon \ket{0}$} & & \gate{H} & \gate[5]{U_f} & \gate{H} & \meter{} \\
+        \lstick{$2 \colon \ket{0}$} & & \gate{H} & & \gate{H} & \meter{} \\
+        \vdots\\
+        \lstick{$n \colon \ket{0}$} & & \gate{H} & & \gate{H} & \meter{} \\
+        \lstick{$\ket{-}$} & & & & & \rstick{$\ket{-}$}
+    \end{quantikz}
+\end{center}
+We may proceed by exactly the same argument as in the previous section.
+\begin{enumerate}
+    \item The initial state is
+    \[
+        \ket{\psi_1} = \lrS{\ket{0}}^{\otimes n} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+    \item Apply $n$ parallel Hadamard gates:
+    \[
+        \ket{\psi_2} = \lrS{H^{\otimes n} \otimes \Id} \ket{\psi_1} 
+    \]
+    In particular:
+    \[
+        H^{\otimes n} \lrS{\ket{0}}^{\otimes n} = \lrS{\frac{\ket{0} + \ket{1}}{\sqrt{2}}}^{\otimes n} = \frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \ket{\mathbf{x}}
+    \]
+    where $\mathbf{x}$ represents a string of zeros and ones of length $n$. 
+    % For simplicity, we may as well convert such a string in an integer number,
+    % \[
+    %     \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \quad\to\quad \sum_{x=0}^{2^n-1} 
+    % \]
+    Thus the state becomes
+    \[
+        \ket{\psi_2} = \lrS{\frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \ket{\mathbf{x}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+    \item The $U_f$ gate is applied:
+    \[
+        \ket{\psi_3} = \lrS{\frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f(\mathbf{x})} \ket{\mathbf{x}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+    \item Finally, we apply once again $n$ parallel Hadamard gates. Let $\mathbf{x}$ be the string
+    \[
+        \mathbf{x} = (x_1, x_2, \cdots, x_n)
+    \]
+    with $x_i \in \lbrace 0,1 \rbrace$. Then
+    \[
+    \begin{aligned}
+        H^{\otimes n} \ket{\mathbf{x}} &= \bigotimes_{i=1}^n H \ket{x_i} \\
+        &= \bigotimes_{i=1}^n \frac{\ket{0} + (-1)^{x_i} \ket{1}}{\sqrt{2}} \\
+        &= \frac{\ket{0} + (-1)^{x_1} \ket{1}}{\sqrt{2}} \otimes \cdots \otimes \frac{\ket{0} + (-1)^{x_n} \ket{1}}{\sqrt{2}} \\
+        &= \frac{1}{2^{n/2}} \sum_{\mathbf{z} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{\mathbf{x} \cdot \mathbf{z}} \ket{\mathbf{z}}
+    \end{aligned}
+    \]
+    since, in the last passage, the sign of the $n$-qubits state $\ket{\mathbf{z}}$ is controlled by how many ones are present in the string which are associated to $x_i=1$. It follows
+    \[
+        \ket{\psi_4} = \lrS{H^{\otimes n} \otimes \Id} \ket{\psi_3} = \lrS{\frac{1}{2^n} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \sum_{\mathbf{z} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f(\mathbf{x}) + \mathbf{x} \cdot \mathbf{z}} \ket{\mathbf{z}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+    \]
+\end{enumerate}
+
+The last step is measurement. The amplitude for measuring the term $\ket{z} = \ket{00 \cdots 0}$ is
+\[
+    \frac{1}{2^n} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f(\mathbf{x})}
+\]
+If $f$ is constant, then $f(\mathbf{z}) = f_0$ for any argument. Then
+\[
+    \frac{1}{2^n} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f_0} = (-1)^{f_0}
+\]
+which implies unitary probability of measuring such state. Conversely, if $f$ is balanced
+\[
+    \frac{1}{2^n} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f(\mathbf{x})} = 0
+\]
+because $f$ equals $0$ on half of the domain and $1$ on the other half. Then, to determine if the function is constant or balanced it suffices to measure if the system occupies the state $\ket{00\cdots0}$: if yes, the function is constant; if not, it is balanced. Just one call.
+
+\section{Grover's algorithm}\label{sec:grover's algorithm}
+
+By itself, Deutsch-Josza algorithm -- even if brilliant by its simplicity and its radicalism (one call instead of exponentially many) -- solves a somewhat useless problem. At least some elements of it are however connected to \textbf{Grover's algorithm}, of major practical interest; this latter is able to solve the so-called \textbf{Quantum Database Search}.
+
+The task to be solved is easily explained: we are given an \textbf{unstructured database} (a set of $N \in \N$ objects without any particular order); to each of these is associated one index entry $x$. Then we have a list of $N$ entries (consecutive integer numbers); by knowing one entry, we can access the object it represents. Moreover, we want to locate one specific object in the database (if present), which is, extract its index entry.
+
+We are given a function running over the database,
+\[
+    f \colon \lbrace 0,1,\cdots,N-1 \rbrace \to \lbrace 0,1 \rbrace
+\]
+able to compare the object at a given entry with the target. It is not necessary to know how it internally works: all we need to know is that, given some entry, the function access the relative object and states if it is the target or not. Then $f(x)$ works as follows
+\[
+\begin{cases}
+    f(x) = 0 \qq{if} x \neq x_0 \\
+    f(x) = 1 \qq{if} x = x_0 
+\end{cases}
+\]
+for one (and only one) specific input $x_0$, the index entry of the searched object.
+
+Classically, for a database of size $N = 2^n$, we would need to run the oracle on the entirety of the database. Which is, the average number of calls would be of order $N/2 = 2^{n-1}$ -- exponentially large in the binary string length. Does it get better, using a probabilistic architecture?
+
+\subsection{Classical probabilistic algorithm}
+
+We aim to run an algorithm able to locate $x_0$ in the database with probability $p$, arbitrarily set as $p=2/3$. The only strategy we have is to choose randomly and compare with the target object.
+
+In steps:
+\begin{enumerate}
+    \item Guess with uniform probability some entry $x_1$ out of $\lbrace 0,1 \rbrace^{\otimes n}$.
+    \item Check if $f$, evaluated on the index entry extracted at the precedent step, equals $1$.
+    \begin{enumerate}
+        \item If yes, halt and return the index entry.
+        \item If not, guess with uniform probability some new entry $x_2$ out of $\lbrace 0,1 \rbrace^{\otimes n} \setminus \lbrace x_1 \rbrace$. Repeat from step 2.
+    \end{enumerate}
+\end{enumerate}
+
+At step 1, the probability of halting the program is simply
+\[
+    \prob{x_1 = x_0} = \frac{1}{2^n}
+\]
+Each repetition of step 2 increments by the same amount the probability of finding the correct answer: after $k$ repetitions of step 2, say, that is
+\[
+    \prob{\vphantom{A^A} x_0 \in \lbrace x_1, x_2, \cdots , x_k \rbrace} = \frac{k+1}{2^n} \imp \frac{2}{3}
+\]
+(the symbol $\imp$ represents imposition). Then the optimal number of calls to $f$ is simply
+\[
+    k^\star = \left\lceil \frac{2^{n+1}}{3} - 1 \right\rceil
+\]
+exponential in $n$. Can we improve, using Quantum Mechanics?
+
+\subsection{Quantum algorithm for $2$-qubits problem}
+
+Let us start with just $2$ qubits. Then we are dealing with a $4$-objects database, with entries
+\[
+    00 \qquad 01 \qquad 10 \qquad 11
+\]
+Add one qubit and define the ``oracle gate'' $U_f$ as in Sec.~\ref{sec:deutsch-josza algorithm},
+\[
+    U_f \ket{\mathbf{x}} \otimes \ket{y} = \ket{\mathbf{x}} \otimes \ket{y \oplus f(\mathbf{x})}
+\]
+being $\ket{\mathbf{x}}$ a $2$-qubits state in the computational basis and $y \in \lbrace 0,1 \rbrace$. Suppose one of the four entries, say $\mathbf{x}_0$, points to the desired object. Then $U_f$ acts as identity over all the states $\ket{\mathbf{x} \neq \mathbf{x}_0}$, and negates $y$ when the index entry is correct.
+
+As we have already seen in Sec.~\ref{subsec:some comments on the ``phase kick-back''}, by using \textbf{phase kick-back} we may leave the additional qubit in an unchanged superposition just by setting it in an appropriate initial superposition. As a circuit,
+
+\begin{center}
+    \begin{quantikz}[slice all,slice style={color=palette-main},slice titles=$\ket{\psi_\col}$]
+        \lstick[2]{$\ket{\mathbf{x}}$} & & \gate{H} & \gate[3]{U_f} & \\
+        & & \gate{H} & & \rstick{$\cdots$} \\
+        \lstick{$\ket{-}$} & & & &
+    \end{quantikz}
+\end{center}
+As we already know,
+\[
+    \ket{\psi_3} = \lrS{\frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} (-1)^{f(\mathbf{x})} \ket{\mathbf{x}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+\]
+with $n=2$. The sign flips only on the target entry,
+\[
+    \ket{\psi_3} = \frac{1}{2} \lrS{- \ket{\mathbf{x}_0} + \sum_{\mathbf{x} \neq \mathbf{x}_0} \ket{\mathbf{x}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+\]
+Can we convert this sign change into a measurable amplitude change? We should look for a $3$-qubits operator to apply of the form
+\[
+    D \otimes \Id
+\]
+with $D$ a $2$-qubits operator, such that
+\[
+    \frac{1}{2} D \lrS{- \ket{\mathbf{x}_0} + \sum_{\mathbf{x} \neq \mathbf{x}_0} \ket{\mathbf{x}}} = \ket{\mathbf{x}_0}
+\]
+or equivalently
+\[
+    \frac{1}{2} \sum_\mathbf{x} D \ket{\mathbf{x}} = \lrR{\Id + D} \ket{\mathbf{x}_0}
+\]
+As it can be easily checked, in the computational basis $D$ is given by
+\[
+    \lrS{D} = \frac{1}{2} \begin{bmatrix}
+        -1 &  1 &  1 & 1 \\
+         1 & -1 &  1 & 1 \\
+         1 &  1 & -1 & 1 \\
+         1 &  1 &  1 & -1 \\
+    \end{bmatrix}
+\]
+Take for example $\mathbf{x}_0 = 10$; it follows
+\[
+    \ket{\mathbf{x}_0} = \begin{bmatrix}
+        0 \\ 0 \\ 1 \\ 0
+    \end{bmatrix}
+    \qq{then}
+    \ket{\psi_3} = \frac{1}{2} \begin{bmatrix}
+        1 \\ 1 \\ -1 \\ 1
+    \end{bmatrix}
+\]
+so that
+\[    
+    D \ket{\psi_3} = \frac{1}{2} \begin{bmatrix}
+        -1 &  1 &  1 & 1 \\
+         1 & -1 &  1 & 1 \\
+         1 &  1 & -1 & 1 \\
+         1 &  1 &  1 & -1 \\
+    \end{bmatrix} \frac{1}{2} \begin{bmatrix}
+        1 \\ 1 \\ -1 \\ 1
+    \end{bmatrix} = \begin{bmatrix}
+        0 \\ 0 \\ 1 \\ 0
+    \end{bmatrix} = \ket{\mathbf{x}_0}
+\]
+This operator performs the said conversion of phase flip to amplitude increment. Let us now give a circuit representation of $D$.
+
+\subsection{Quantum circuit for $2$ qubits}
+
+Consider the following circuit
+\begin{center}
+    \begin{quantikz}
+        & \gate{H} & \gate{X} \gategroup[
+            wires=2,
+            steps=5,
+            style={
+                dashed,
+                rounded corners,
+                color=palette-main,
+                fill=palette-main!20,
+                inner xsep=2pt},
+            background,
+            label style={label position=below,anchor=north,yshift=-0.2cm}
+        ]{$D^\star$} & & \ctrl{1} & & \gate{X} & \gate{H} \\
+        & \gate{H} & \gate{X} & \gate{H} & \targ{} & \gate{H} & \gate{X} & \gate{H}
+    \end{quantikz}
+\end{center}
+Our claims are:
+\begin{enumerate}
+    \item The sub-circuit $D^\star$ realizes
+    \[
+        \lrS{D^\star} = \begin{bmatrix}
+            1  & & & \\
+            & -1 & & \\
+            & & -1 & \\
+            & & & -1
+        \end{bmatrix}
+    \]
+    in the computational basis.
+    \item The entire circuit realizes
+    \[
+        (H \otimes H) D^\star (H \otimes H) = D 
+    \]
+\end{enumerate}
+Let us now prove those statements.
+
+\begin{proof}[First statement]
+    Consider the circuit for $D^\star$. In terms of operators,
+    \[
+        D^\star = (X \otimes X) (\Id \otimes H) \cnot (\Id \otimes H) (X \otimes X)
+    \]
+    The $\cnot$ operator may as well be written as
+    \[
+    \begin{aligned}
+        \cnot &= \op{0} \otimes \Id + \op{1} \otimes X \\
+        &= \frac{1}{2} \lrS{\Id + Z} \otimes \Id + \frac{1}{2} \lrS{\Id - Z} \otimes X \\
+        &= \frac{1}{2} \lrS{\Id \otimes \Id + Z \otimes \Id + \Id \otimes X - Z \otimes X} 
+    \end{aligned}
+    \]
+    Then, using the identities $H^2 = \Id$ and $HXH = Z$,
+    \[
+        (\Id \otimes H) \cnot (\Id \otimes H) = \frac{1}{2} \lrS{\Id \otimes \Id + Z \otimes \Id + \Id \otimes Z - Z \otimes Z} 
+    \]
+    Finally, by the identities $X^2=\Id$ and $XZX=-Z$
+    \[
+        D^\star = \frac{1}{2} \lrS{\Id \otimes \Id - Z \otimes \Id - \Id \otimes Z - Z \otimes Z}
+    \]
+    Sum and subtract one identity inside the brakets,
+    \[
+        D^\star = \Id \otimes \Id - \frac{1}{2} \lrS{\Id \otimes \Id + Z \otimes \Id + \Id \otimes Z + Z \otimes Z}
+    \]
+    Since:
+    \[
+    \begin{aligned}
+        \lrS{\Id \otimes \Id} &= \begin{bmatrix}
+            1 & & & \\
+            & 1 & & \\
+            & & 1 & \\
+            & & & 1
+        \end{bmatrix} \\ 
+        \lrS{Z \otimes Z} &= \begin{bmatrix}
+            1  &  & & \\
+            & -1  & & \\
+            &  & -1 & \\
+            &  &  & 1
+        \end{bmatrix}
+    \end{aligned}
+    \qquad
+    \begin{aligned}
+        \lrS{Z \otimes \Id} &= \begin{bmatrix}
+            1 &  &  & \\
+            & 1  &  & \\
+            & & -1  & \\
+            & &  & -1
+        \end{bmatrix} \\
+        \lrS{\Id \otimes Z} &= \begin{bmatrix}
+            1  & &  & \\
+            & -1 &  & \\
+            &  & 1  & \\
+            &  & & -1
+        \end{bmatrix}
+    \end{aligned}
+    \]
+    then, evidently
+    \[
+        \lrS{D^\star} = \begin{bmatrix}
+            -1 & & & \\
+             & 1 & & \\
+             & & 1 & \\
+             & & & 1
+        \end{bmatrix}
+    \]
+    It coincides with the desired matrix apart from an overall sign ($\pi$ phase). In the following step we compose this operator with parallel Hadamards, and the global operator is composed with an identity over the third qubit. Then we can simply ignore this phase difference.
+\end{proof}
+
+\subsection{Graphical interpretation: inversion about the mean}
+
+\subsection{Generalization to $n$ qubits}

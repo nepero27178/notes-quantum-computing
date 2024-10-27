@@ -1,0 +1,35 @@
+\def\rotationSphere{-120}
+\def\tiltsphere{20}
+\def\radiusSphere{2cm}
+\begin{blochsphere}[
+    radius=\radiusSphere,
+    tilt=\tiltsphere,
+    rotation=\rotationSphere,
+    opacity=0
+    ]
+    % --- Ball setup ---
+    \drawBallGrid[style={opacity=0.05}]{30}{45}
+    
+    % --- Points ---
+    \labelLatLon{ket0}{90}{0};
+    \labelLatLon{ket1}{-90}{0};
+    \labelLatLon{ketminus}{0}{180};
+    \labelLatLon{ketplus}{0}{0};
+    \labelLatLon{ketpluspi2}{0}{-90};
+    \labelLatLon{ketplus3pi2}{0}{-270};
+
+    % --- Antipodal axes ---
+    \draw[thin,color=palette-gray,dashed]
+        (ket0) -- (ket1)
+        (ketplus) -- (ketminus)
+        (ketpluspi2) -- (ketplus3pi2);
+
+    % --- States ---
+    \filldraw
+        (ket0) circle (1pt) node[anchor=south,inner sep=0.5em] {$\ket{0}$}
+        (ket1) circle (1pt) node[anchor=north,inner sep=0.5em] {$\ket{1}$}
+        (ketplus) circle (1pt) node[anchor=north east,inner sep=0.25em] {$\ket{+}$}
+        (ketminus) circle (1pt) node[anchor=south west,inner sep=0.25em] {$\ket{-}$}
+        (ketpluspi2) circle (1pt)
+        (ketplus3pi2) circle (1pt);
+\end{blochsphere}

@@ -1,0 +1,55 @@
+\def\rotationSphere{-120}
+\def\tiltsphere{20}
+\def\radiusSphere{2cm}
+\def\psiLat{50}
+\def\psiLon{60}
+\begin{blochsphere}[
+    radius=\radiusSphere,
+    tilt=\tiltsphere,
+    rotation=\rotationSphere,
+    opacity=0
+    ]
+    % --- Ball setup ---
+    \drawBallGrid[style={opacity=0.05}]{30}{45}
+    \drawLongitudeCircle[style={dashed,color=palette-gray}]{-\psiLon}
+    \drawLatitudeCircle[style={dashed,color=palette-gray}]{0}
+    
+    % --- Points ---
+    \labelLatLon{ket0}{90}{0};
+    \labelLatLon{ket1}{-90}{0};
+    \labelLatLon{ketminus}{0}{180};
+    \labelLatLon{ketplus}{0}{0};
+    \labelLatLon{ketpluspi2}{0}{-90};
+    \labelLatLon{ketplus3pi2}{0}{-270};
+    \labelLatLon{psi}{\psiLat}{-\psiLon};
+    
+    % --- Axis ---
+    \draw[-stealth]
+    (0,0) -- (ket0) node[anchor=south,inner sep=0.5em] 
+        at (ket0) {\footnotesize $z$};
+    \draw[-stealth] 
+    (0,0) -- (ketplus) node[anchor=north east,inner sep=0.25em] 
+        at (ketplus) {\footnotesize$x$};
+    \draw[-stealth] 
+    (0,0) -- (ketpluspi2) node[anchor=west,inner sep=0.5em] 
+        at (ketpluspi2) {\footnotesize $y$};
+        
+    % --- Ket ---
+    \draw[color=palette-main,-stealth] 
+        (0,0) -- (psi) node[right,xshift=0.3em]{\footnotesize $\ket{\psi}$};
+    
+    % --- Angles ---
+    \coordinate (origin) at (0,0);
+    {
+        \setDrawingPlane{0}{0}
+        \draw[current plane,dashed,color=palette-main] 
+            (0,0) -- (-90+\psiLon:{cos(\psiLat)*\radiusSphere}) coordinate (psiProjectedEquat) -- (psi);
+        \pic[current plane,fill=palette-main,fill opacity=0.5,text opacity=1,"\footnotesize $\varphi$",angle eccentricity=2.2]
+            {angle=ketplus--origin--psiProjectedEquat};
+    }
+    {
+        \setLongitudinalDrawingPlane{-\psiLon}
+        \pic[current plane,fill=palette-main,fill opacity=0.5,text opacity=1,"\footnotesize $\theta$",angle eccentricity=1.5]
+            {angle=psi--origin--ket0};
+    }
+\end{blochsphere}

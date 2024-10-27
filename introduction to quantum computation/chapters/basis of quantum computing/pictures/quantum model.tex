@@ -1,0 +1,39 @@
+\def\hspacing{4}
+\def\vspacing{2}
+\begin{tikzpicture}
+    \node (a0) at (0,0) {};
+    \foreach \i in {0,1,...,4}{
+        \node (b\i) at (\hspacing,{(\i-2)*\vspacing}) {};
+        \node (c\i) at ({2*\hspacing},{(\i-2)*\vspacing}) {};
+    }
+
+    \draw
+        \foreach \i in {0,1,...,4}{
+            (a0) -- (b\i) 
+                node [near end,anchor=north,yshift=-0.25em,xshift=0.1em] {$\alpha_{0\i}^{(1)}$}
+        }
+        (b0) -- (c0)
+            node [near start,anchor=north,yshift=-0.25em] {$\alpha_{00}^{(2)}$}
+        (b1) -- (c0)
+            node [near start,anchor=north,yshift=-0.25em] {$\alpha_{01}^{(2)}$}
+        (b4) -- (c4)
+            node [near start,anchor=north,yshift=-0.25em] {$\alpha_{44}^{(2)}$}
+        (b3) -- (c4)
+            node [near start,anchor=north,yshift=-0.25em] {$\alpha_{34}^{(2)}$}
+        ;
+    
+    \filldraw[color=palette-main,fill=white] 
+        (a0) circle (1em)
+            node () {$\ket{0}$};
+    \filldraw[color=palette-main,fill=white]
+        \foreach \i in {0,1,2,3,4}{
+            (b\i) circle (1em)
+                node {$\ket{\i}$}
+            (c\i) circle (1em)
+                node {$\ket{\i}$}
+        };
+
+    \node at ({1.5*\hspacing},0) {$\vdots$};
+    \node at ({2.5*\hspacing},0) {$\cdots$};
+            
+\end{tikzpicture}

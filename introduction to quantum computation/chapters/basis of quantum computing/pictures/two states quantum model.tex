@@ -1,0 +1,26 @@
+\def\hspacing{4}
+\def\vspacing{2}
+\begin{tikzpicture}
+    \foreach \i in {0,1}{
+        \node (a\i) at (0,{(\i-2)*\vspacing}) {};
+        \node (b\i) at (\hspacing,{(\i-2)*\vspacing}) {};
+        \node (c\i) at ({2*\hspacing},{(\i-2)*\vspacing}) {};
+    }
+
+    \draw[dashed]
+        (a1) -- (b0) -- (c1)
+        (a1) -- (b1) -- (c1);
+    \draw[color=palette-main]
+        (a0) -- (b0) node[near start,anchor=north] {$t$} -- (c0) node[near end,anchor=north] {$t$}
+        (a0) -- (b1) node[near start,anchor=south] {$t$} -- (c0) node[near end,anchor=south] {$-t$};
+
+    \filldraw[color=palette-main,fill=white]
+        \foreach \i in {0,1}{
+            (a\i) circle (1em)
+                node {$\ket{\i}$}
+            (b\i) circle (1em)
+                node {$\ket{\i}$}
+            (c\i) circle (1em)
+                node {$\ket{\i}$}
+        };            
+\end{tikzpicture}

@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper,twoside,openright,titlepage,
+headinclude,footinclude,BCOR=5mm,numbers=noenddot,
+cleardoublepage=empty,abstracton,table,usenames,dvipsnames]{scrbook}
+
+\input{misc/packages}       % Packages
+\input{misc/graphic setup}  % Setups for graphics
+\input{misc/definitions}    % Definitions
+
+
+% --- Graphics ---
+
+% Fix Arsclassica TOC
+\makeatletter
+\renewcommand{\numberline}[1]{% 
+  \hb@xt@\@tempdima{\@cftbsnum{#1}\@cftasnum\hfil}\@cftasnumb}
+\makeatother
+
+% Numbering within chapter
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+
+% Footnotes separator
+\setlength{\skip\footins}{1cm}
+
+% Version
+% \newcommand{\version}{\( 1.0 \)}
+
+% Bibliography
+\addbibresource{misc/bibliography.bib}
+
+
+% --- Compiler ---
+
+\includeonly{
+   % misc/cover,
+   % misc/license,
+   % misc/intro,
+   % introduction to quantum computation/chapters/basis of quantum computing/basis of quantum computing,
+   introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/the deutsch-josza and grover's algorithms
+}
+
+
+\begin{document}
+	%    
+    \include{misc/cover}
+    \include{misc/license}
+    \include{misc/intro}
+	%
+    \pdfbookmark{\contentsname}{toc}
+    \tableofcontents % Toggle comment
+	
+    % \part{Introduction to quantum computation} % Toggle comment
+    \include{introduction to quantum computation/chapters/basis of quantum computing/basis of quantum computing}
+    \include{introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/the deutsch-josza and grover's algorithms}
+    %
+    \printbibliography\nocite{*}
+	%
+\end{document}

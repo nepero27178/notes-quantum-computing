@@ -1,0 +1,356 @@
+\chapter{Basis of Quantum Computing}\label{chap:basis of quantum computing}\chaptertoc{}
+
+{\color{palette-main} To do: intro; proof to Theorem 1; proofs of lemmas 1, 2; comments on $n$-qubits gates.}
+
+\section{Quantum computational model}
+
+Inside a quantum system, to perform a computation means to apply some precise operation on a given input state, and to read the output. Such a state is represented by a set of qubits, each one a $2$-level system. Namely, a \textbf{qubit pure state} is a coherent superposition of two states, $\ket{0}$ and $\ket{1}$,
+\[
+    \ket{\psi} = a \ket{0} + b \ket{1}
+    \qq{normalized:}
+    \abs{a}^2 + \abs{b}^2 = 1
+\]
+with complex coefficients $a,b \in\C$. Note that if the qubits are many, the state of one particular qubit may not be pure, but entangled.
+
+\begin{figure}
+    \centering
+    \input{introduction to quantum computation/chapters/basis of quantum computing/pictures/bloch sphere}
+    \caption{Representation of the Bloch's sphere; apart from an unmeasurable global phase, a point on its surface is a well defined $1$-qubit state.}
+    \label{fig:bloch sphere}
+\end{figure}
+
+Notice that a global phase over the pure state $\ket{\psi}$ is not measurable; thus we can choose $a$ to be real, only accounting for the relative phase $e^{i \varphi}$,
+\[
+    \ket{\psi} = a \ket{0} + e^{i\varphi} \sqrt{1-a^2} \ket{1}
+\]
+Being $a^2 < 1$, we introduce the angle $\theta$ such that
+\[
+    \ket{\psi} = \cos \lrR{\frac{\theta}{2}} \ket{0} + e^{i\varphi} \sin \lrR{\frac{\theta}{2}} \ket{1}
+\]
+$\varphi$ and $\theta$ have the following meaning: a single qubit pure state can be represented as a point on the surface of a \textbf{Bloch's sphere} with azimuthal angle $\theta$ and polar angle $\varphi$. A representation of such parametrization is given in Fig.~\ref{fig:bloch sphere}.
+
+Under this parametrization, evidently, the state $\ket{0}$ is obtained for $\theta=0$ and generic $\varphi$; analogously, for $\theta=\pi$ and generic $\varphi$ the state $\ket{1}$ is realized. Then $\ket{0}$ occupies the ``north pole'' of the Bloch's sphere, and $\ket{1}$ the ``south pole'', as depicted in Fig.~\ref{fig:bloch sphere poles}. We also define the states $\ket{+}$ and $\ket{-}$,
+\[
+    \ket{+} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}
+    \qquad
+    \ket{-} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}
+\]
+antipodal as well. Next section is devoted to a brief discussion of those operations mapping a pure state to a pure state acting only on the qubit Hilbert space.
+
+\begin{figure}
+    \centering
+    \input{introduction to quantum computation/chapters/basis of quantum computing/pictures/bloch sphere poles}
+    \caption{The ``north pole'' of the sphere represents, apart from a general $U(1)$ symmetry, the state $\ket{0}$; the ``south pole'' analogously represents the state $\ket{1}$. Hadamard states $\ket{\pm}$ are well-defined (both $\theta$ and $\varphi$ have a precise value).}
+    \label{fig:bloch sphere poles}
+\end{figure}
+
+\subsection{$1$-qubit gates}
+
+We introduce \textbf{$1$-qubit operations}: these are simply those mapping a pure state $\ket{\psi}$ into another pure state - namely, another point od the sphere surface. Notice that, given the single-qubit Hilbert space
+\[
+    \Hilbert_1 =  \Span \lbrace \ket{0}, \ket{1} \rbrace
+\]
+a \textbf{$1$-qubit operator} $U_1$ simply acts by
+\[
+    U_1 \colon \Hilbert_1 \to \Hilbert_1
+\]
+meaning that it is precisely representable as a \textbf{rotation} of the vector representing the state in the Bloch's sphere. Let $\sigma^i$, for $i=x,y,z$, be the Pauli matrix,
+\[
+    \sigma^x \equiv \begin{bmatrix} & 1 \\ 1 & \end{bmatrix}
+    \qquad
+    \sigma^y \equiv \begin{bmatrix} & -i \\ i & \end{bmatrix}
+    \qquad
+    \sigma^z \equiv \begin{bmatrix} 1 & \\ & -1 \end{bmatrix}
+\]
+The common, lighter notation is
+\[
+    X = \sigma^x
+    \qquad
+    Y = \sigma^y
+    \qquad
+    Z = \sigma^z
+\]
+Let $\Rotation_\nu (\theta)$ be a rotation of angle $\theta$ around axis $\nu$, intended in the Bloch's sphere framework. Then
+\[
+\begin{aligned}
+    \Rotation_x (\theta) =& e^{-i \theta \sigma^x /2 } = \cos \lrR{\frac{\theta}{2}} \Id - i \sin \lrR{\frac{\theta}{2}} X = \begin{bmatrix}
+        \cos(\theta/2) & -i \sin(\theta/2) \\
+        i \sin(\theta/2) & \cos(\theta/2)
+    \end{bmatrix} \\
+    \Rotation_y (\theta) =& e^{-i \theta \sigma^y /2 } = \cos \lrR{\frac{\theta}{2}} \Id - i \sin \lrR{\frac{\theta}{2}} Y = \begin{bmatrix}
+        \cos(\theta/2) & \sin(\theta/2) \\
+        - \sin(\theta/2) & \cos(\theta/2)
+    \end{bmatrix} \\
+    \Rotation_z (\theta) =& e^{-i \theta \sigma^z /2 } = \cos \lrR{\frac{\theta}{2}} \Id - i \sin \lrR{\frac{\theta}{2}} Z = \begin{bmatrix}
+        e^{i\theta/2} & \\
+        & e^{-i\theta/2}
+    \end{bmatrix} \\
+\end{aligned}
+\]
+so, composing these matrices \textit{somehow}, we should be able to represent any rotation, thus any $1$-qubit operator. This is true indeed. Consider in fact the following
+\begin{theorem}
+    Let $U_1$ be a $1$-qubit operator. Then four angles $\alpha$, $\beta$, $\gamma$ and $\delta$ exists such that
+    \[
+        U_1 = e^{i\alpha} \Rotation_z(\beta) \Rotation_y (\gamma) \Rotation_z(\delta)
+    \]
+    Moreover, defining the operators $A$, $B$ and $C$ as
+    \[
+        A \equiv \Rotation_z (\beta) \Rotation_y \lrR{\frac{\gamma}{2}}
+        \quad
+        B \equiv \Rotation_y \lrR{-\frac{\gamma}{2}} \Rotation_z \lrR{- \frac{\delta + \beta}{2}}
+        \quad
+        C \equiv \Rotation_z \lrR{\frac{\delta - \beta}{2}}
+    \]
+    the following identities hold:
+    \[
+        ABC = \Id
+        \qquad
+        e^{i\alpha} AXBXC = U_1
+    \]
+\end{theorem}
+
+\begin{proof}
+    \Comment{Add: proof.}
+\end{proof}
+
+The standard representation of quantum operations on qubits is the \textbf{quantum circuit representation}. Here, the Hilbert space is represented by a line over which a state ``lives''. To apply a $1$-qubit gate means to insert at some point along the line a box representing the operator. The line is to be read sequentially from left to right: the operation
+\[
+    U_1 \colon \ket{\psi} \to\ \ket{\phi} \equiv U_1 \ket{\psi}
+\]
+is represented by
+\begin{center}
+    \begin{quantikz}
+        \lstick{$\ket{\psi}$} & \gate{U_1} & \rstick{$\ket{\phi}$}
+    \end{quantikz}
+\end{center}
+We now list some relevant $1$-qubit gates.
+
+\paragraph{Hadamard gate}
+
+The \textbf{Hadamard gate} is defined as
+\[
+    H \equiv \frac{1}{\sqrt{2}} \begin{bmatrix}
+        1 & 1  \\
+        1 & -1
+    \end{bmatrix}
+\]
+It acts simply on the computational basis,
+\[
+    H \ket{0} = \frac{\ket{0} + \ket{1}}{\sqrt{2}} = \ket{+}
+    \qquad
+    H \ket{1} = \frac{\ket{0} - \ket{1}}{\sqrt{2}} = \ket{-}
+\]
+and similarly
+\[
+    H \ket{+} = \ket{0}
+    \qquad
+    H \ket{-} = \ket{1}
+\]
+It follows immediately, and can be easily checked, $H^2 = \Id$.
+
+\paragraph{$T$-gate} Also referred to as the $\pi/8$-gate, the \textbf{$T$-gate} is defined as
+\[
+    T \equiv \begin{bmatrix}
+        1 & \\
+          & e^{i\pi/4}
+    \end{bmatrix} = e^{i\pi/8} \begin{bmatrix}
+        e^{-i\pi/8} & \\
+                    & e^{i\pi/8}
+    \end{bmatrix}
+\]
+Notice that the global $e^{i\pi/8}$ phase in front of the gate, for a single-qubit process, is global and immeasurable. The gate dephases the computational basis as
+\[
+    T \ket{0} = \ket{0}
+    \qquad
+    T \ket{1} = e^{i\pi/4} \ket{1}
+\]
+
+Interesting results are the following
+\begin{lemma}
+    The set of operators
+    \[
+        \left\lbrace
+            HTHT, THTH
+        \right\rbrace
+    \]
+    can compose \textbf{any arbitrary Bloch rotation}, thus represent a \textbf{universal set of $1$-qubits gates}.
+\end{lemma}
+\begin{lemma}
+    The set of $1$-qubit operators
+    \[
+        \left\lbrace 
+            H, T
+        \right\rbrace
+    \]
+    is \textbf{universal}.
+\end{lemma}
+
+\subsection{$2$-qubits gates}\label{subsec:2-qubits gates}
+
+Consider two isolated qubits.  Let the global Hilbert space be $\Hilbert_2 \equiv \Hilbert_1 \otimes \Hilbert_1$. We call the ``first qubit'' the one relative to the first space in the outer product, and the ``second qubit'' the other one. A $2$-qubit operation $U_2$ acts by
+\[
+    U_2 \colon \Hilbert_2 \to \Hilbert_2
+\]
+Notice that only a small portion of the couple space $\Hilbert_2$ is made of \textbf{separable states}, which are, states that can be written as products of single-qubit pure states. The vast majority of states in $\Hilbert_2$ are \textbf{entangled}. Graphically,
+\begin{center}
+    \begin{quantikz}
+        \lstick[2]{$\ket{\psi}$} & \gate[2]{U_2} & \rstick[2]{$\ket{\phi}$} \\
+        &&
+    \end{quantikz}
+\end{center}
+Namely, a $2$-qubit gate performs some operation on the collective state. In quantum computing, a very important class of $2$-qubits gates are those \textbf{controlled}. For such gates, one of the input states is the \textbf{control} and the other is the \textbf{target}. The control is in general a quantum mixture of single-qubit states $\ket{0}$ and $\ket{1}$. Now, the general form of the $2$-qubits state is clearly
+\[
+    \ket{\psi} = a_{00} \ket{00} + a_{01} \ket{01} + a_{10} \ket{10} + a_{11} \ket{11}
+\]
+with $a_{ij} \in \C$ (normalized) and $\ket{ij} = \ket{i} \otimes \ket{j}$. Let the first qubit be the control and the second be the target. Then we can rewrite
+\[
+    \ket{\psi} = \ket{0} \otimes \lrS{\vphantom{A^A} a_{00} \ket{0} + a_{01} \ket{1}} + \ket{1} \otimes \lrS{\vphantom{A^A} a_{10} \ket{0} + a_{11} \ket{1}}
+\]
+A controlled gate acts on the target qubit as an identity if the control is zero, and as some $1$-qubit operator $U_1$ if the control is one,
+\[
+    U_2 \ket{\psi} = \ket{0} \otimes \lrS{\vphantom{A^A} a_{00} \ket{0} + a_{01} \ket{1}} + \ket{1} \otimes U_1 \lrS{\vphantom{A^A} a_{10} \ket{0} + a_{11} \ket{1}}
+\]
+clearly equivalent to
+\[
+    U_2 = \op{0} \otimes \Id + \op{1} \otimes U_1
+\]
+The graphic representation of the controlled-$U_1$ gate is
+\begin{center}
+    \begin{quantikz}
+        & \ctrl{1} & \\
+        & \gate{U_1} &
+    \end{quantikz}
+\end{center}
+
+The matrix representation of a $2$-qubits operator is a $2^2 \times 2^2$ matrix,
+\[
+    \lrS{U_2}_{\alpha\beta} = \mel{\alpha}{U_2}{\beta}
+\]
+with $\ket{\alpha}$, $\ket{\beta}$ the $2$-qubits orthonormal states. The computational basis through which we may express $U_2$ is
+\[
+    \left\lbrace \ket{00},\ket{01},\ket{10},\ket{11} \right\rbrace
+\]
+Namely: each entry of the $4\times 4$ matrix can be identified by four logical numbers,
+\[
+    \lrS{U_2}_{(ij)(lm)} = \mel{ij}{U_2}{lm}
+\]
+Then its controlled version is
+\[
+\begin{aligned}
+    \lrS{U_2}_{(ij)(lm)} &= \mel{ij}{ \lrS{\vphantom{A^A}\op{0} \otimes \Id + \op{1} \otimes U_1} }{lm} \\
+    &= \delta_{i0}\delta_{l0} \delta_{jm} + \delta_{i1}\delta_{l1} \lrS{U_1}_{jm} 
+\end{aligned}
+\]
+which gives
+\[
+    \lrS{U_2} = \begin{bmatrix}
+        1 & & & \\
+        & 1 & & \\
+        & & U_{00} & U_{01} \\
+        & & U_{10} & U_{11}
+    \end{bmatrix}
+\]
+
+A very simple and useful example of controlled gate is the \textbf{controlled not gate}, also referred to as $\cnot$.
+
+\begin{eg}[Controlled not]
+    In classical computing, the NOT operator simply logically inverts the bit state. Its quantum analog is evidently the $X$ $1$-qubit operator, inverting the amplitudes for the $0$ and the $1$ state. Then the $\cnot$ gate is simply
+    \[
+        \cnot = \op{0} \otimes \Id + \op{1} \otimes X
+    \]
+    graphically represented by
+    \begin{center}
+        \begin{quantikz}
+            \lstick{$c$} & \ctrl{1} & \\
+            \lstick{$t$} & \gate{X} &
+        \end{quantikz}
+    \end{center}
+    with $c$ the control line and $t$ the target line. More often, the gate is represented as:
+    \begin{center}
+        \begin{quantikz}
+            & \ctrl{1} & \\
+            & \targ{} &
+        \end{quantikz}
+    \end{center}
+    Its matrix representation is immediately computable,
+    \[
+        \cnot = \begin{bmatrix}
+        1 & & & \\
+        & 1 & & \\
+        & & & 1 \\
+        & & 1 & 
+    \end{bmatrix}
+    \]
+    We could have guessed: the $X$ inversion is active only on the portion of the pair Hilbert space $\Hilbert_2$ for which the first qubit is ``logically active''.
+\end{eg}
+
+\subsection{$n$-qubits gates}
+
+It is pretty much straightforward to extend the previous definitions to $n$ qubits. \Comment{Go on...}
+
+\section{A protocol for quantum algorithms}
+
+Now, One could correctly think: what kind of advantage do we gain by using Quantum Mechanics? This latter is essentially a very special (non-abelian) theory of probability. This brief section highlights the main difference between probabilistic classical computing and quantum computing.
+
+\subsection{Classical probabilistic model}
+
+\begin{figure}
+    \centering
+    \input{introduction to quantum computation/chapters/basis of quantum computing/pictures/probabilistic model}
+    \caption{A probabilistic ``network-like'' model of computations. The circled numbers represent the logical states of the system; the meaning of other symbols is explained in the text. Here we suppose the system to have $4$ logical states, and to start from the logical state ``$0$''.}
+    \label{fig:probabilistic model}
+\end{figure}
+
+In general, we may imagine a classical probabilistic protocol of computation as a sort of network: given some input and some set of states, each computational step can be represented as a mapping of the input state with fixed probability, as represented in Fig.\ref{fig:probabilistic model}. We enumerate the logical states of the system, $\lbrace 0,1,\cdots \rbrace$, and define
+\[
+    p_{ij}^{(k)} \equiv \text{probability of transitioning from state $i$ to state $j$ at step $k$.}
+\]
+
+The obvious consequence is that the probability of ending on state $j$ starting from state $i$ in $n$ steps of computation is the sum of all possible paths in the diagram,
+\[
+    \prob{i \to j; n} = \sum_{k_1} p_{ik_1}^{(1)} \sum_{k_2} p_{k_1 k_2}^{(2)} \cdots \sum_{k_{n-1}} p_{k_{n-1} j}^{(n)}
+\]
+e.g. for the simple situation in Fig.\ref{fig:probabilistic model} we have
+\[
+    \prob{0 \to 1;2} = \sum_k p_{0k}^{(1)} p_{k1}^{(2)}
+\]
+
+The main feature of this scheme can be synthesized as follows: the more the paths connecting the initial and the final state, the bigger (or at least the ``not-lower'') the resulting transition probability. This is because each probability, taken singularly, is positive-defined. As we shall see immediately, this is not the case on quantum hardware.
+
+\subsection{Quantum model}
+
+\begin{figure}
+    \centering
+    \input{introduction to quantum computation/chapters/basis of quantum computing/pictures/quantum model}
+    \caption{Quantum ``network-like'' model of computation. This figure is the direct extension of Fig.~\ref{fig:probabilistic model}, with analogous significance of symbols.}
+    \label{fig:quantum model}
+\end{figure}
+
+The quantum model is very similar, and represented in Fig.~\ref{fig:quantum model}. Here the logical states are quantum states in some Hilbert space, and the transition probabilities are replaced by transition \textit{amplitudes}. The amplitude $\alpha_{ij}^{(k)}$ represent transition from state $\ket{i}$ to state $\ket{j}$ at step $k$ of computation. Here, evidently
+\[
+    \prob{i \to j; n} = \left| \sum_{k_1} \alpha_{ik_1}^{(1)} \sum_{k_2} \alpha_{k_1 k_2}^{(2)} \cdots \sum_{k_{n-1}} \alpha_{k_{n-1} j}^{(n)} \right|^2
+\]
+but amplitudes are complex numbers, thus can destructively interfere! For a quantum protocol, it holds no more that the more two states are connected, the higher the respective transition probability.
+
+Take for example the very simple two-states system in Fig.~\ref{fig:two states quantum model}, and suppose
+\[
+    \alpha^{(1)}_{00} = \alpha^{(1)}_{01} = t
+    \qquad
+    \alpha^{(2)}_{00} = t
+    \qquad
+    \alpha^{(2)}_{10} = -t
+\]
+This means evidently
+\[
+    \prob{0 \to 0;2} = \alpha^{(1)}_{00} = \alpha^{(2)}_{00} + \alpha^{(1)}_{01} \alpha^{(2)}_{10} = t^2 - t^2 = 0
+\]
+The probability of transitioning from state $0$ to the same state in two steps is nullified because of destructive interference. This is the most real relevant difference with respect to classical probabilistic computing: the unitary processes that implement computation act on amplitudes, thus by cleverly designing algorithm we can take advantage of interference itself -- the great deal of Quantum Mechanics -- in order to engineer precise behaviors of the computer.
+
+\begin{figure}
+    \centering
+    \input{introduction to quantum computation/chapters/basis of quantum computing/pictures/two states quantum model}
+    \caption{A two-step computation on a single qubit computational model. As explained in text, we here suppose the amplitudes to be $\braket{0}{0} = \braket{0}{1} = t$ at the first step and $\braket{0}{0} = t$, $\braket{1}{0} = - t$ at the second step. The dashed lines are connections irrelevant to the process $0\to 0$ in two steps, while the green lines are the relevant links.}
+    \label{fig:two states quantum model}
+\end{figure}
+
+\Comment{Go on...}

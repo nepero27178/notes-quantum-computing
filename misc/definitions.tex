@@ -1,0 +1,123 @@
+% --- Citation environment ---
+    \newenvironment{cit}[2]
+        {
+            \begin{mdframed}[
+                linewidth=1pt,
+                linecolor=palette-main!50,
+                leftmargin=1em,
+                bottomline=false,
+                topline=false,
+                rightline=false,
+                innerrightmargin=0pt,
+                innertopmargin=0pt,
+                innerbottommargin=0pt,
+                innerleftmargin=1em,
+                skipabove=1em,
+                skipbelow=1em
+            ]
+            \noindent\normalfont   
+            \textbf{\citename{#1}{author}}: \textbf{\citetitle{#1}}  (\cite{#1} @ #2)
+            \vspace{0.5em}\newline
+        }
+        {\end{mdframed}}
+
+% --- Example environment ---
+    \newcounter{example}
+    \counterwithin{example}{chapter}
+    \newenvironment{eg}[1][]
+        {
+            \refstepcounter{example}
+            \vspace{1em}
+            \noindent\normalfont   
+            \textbf{Example~\theexample} (#1).
+            \nopagebreak
+            \begin{mdframed}[
+                linewidth=1pt,
+                linecolor=palette-main!50,
+                leftmargin=1em,
+                bottomline=false,
+                topline=false,
+                rightline=false,
+                innerrightmargin=0pt,
+                innertopmargin=0pt,
+                innerbottommargin=0pt,
+                innerleftmargin=1em,
+                skipabove=1em,
+                skipbelow=1em
+            ]
+        }{
+            \end{mdframed}
+        }
+
+% --- Comments ---
+    \newcommand{\Comment}[1]{\color{palette-main}#1\color{black}}
+
+% --- Math environments ---
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{lemma}{Lemma}
+    
+% --- Useful math commands ---
+    \def\beq{\begin{equation}}
+    \def\eeq{\end{equation}}
+    % Sets
+        \newcommand{\C}{\mathbb{C}}
+        \newcommand{\R}{\mathbb{R}}
+        \newcommand{\N}{\mathbb{N}}
+        \newcommand{\Z}{\mathbb{Z}}
+    % Physics
+        \newcommand{\normalorder}[1]{\colon #1 \, \colon}
+        \DeclareMathOperator{\cnot}{CNOT}
+    % Algebra
+        \newcommand{\Id}{\mathbb{1}}
+        \DeclareMathOperator{\Span}{Span}
+        \newcommand{\Hilbert}{\mathcal{H}}
+        \newcommand{\Rotation}{\mathcal{R}}
+    % Other
+        \newcommand{\nquad}{\mkern-18mu}    % De-indent
+        \newcommand{\sgn}{\mathrm{sgn}}     % Sign
+        \newcommand{\imp}{\stackrel{!}{=}}  % Impose
+        \newcommand{\questionmarkeq}{\stackrel{?}{=}}
+        \newcommand{\half}{%
+          \ifmmode
+            \frac{1}{2} % \half in mathmode
+          \else
+            $1/2$ % \half in text
+          \fi
+        }
+        \newcommand{\ol}[1]{\overline{{#1}}}
+        \newcommand{\lrR}[1]{\left({#1}\right)} % left and right round parentheses
+        \newcommand{\lrS}[1]{\left[{#1}\right]} % left and right square parentheses
+        \newcommand{\lrB}[1]{\left\{{#1}\right\}} % left and right braces
+        \newcommand{\dV}[1] {d^3 \mathbf{#1}\,} % elemento di volume        
+        \newcommand{\prob}[1]{\mathrm{Prob}\left\lbrace #1 \right\rbrace}
+    % Versors
+        \newcommand{\versor}[1]{\ensuremath{\mathbf{\bar{#1}}}}
+    
+% --- Simbolo per sezioni/sottosezioni Opzionali ---
+    \newcommand{\optional}{\texorpdfstring{\textreferencemark{} }{※ }} 
+
+% --- EqBox ---
+    % Pacchetto di riferimento: tcolorbox
+    \newtcolorbox{eqbox}[1][]{
+      colback=lev!15,
+      top=0.4em,     
+      bottom=0.8em,
+      colframe=white,
+      width=\textwidth,
+      after={\par\smallskip\noindent\ignorespacesafterend}, %
+      #1 % parametro (placeholder) per eventuali
+         % argomenti facoltativi
+    }
+
+% --- Midline arrow
+\newcommand{\arrowIn}{
+    \tikz \draw[-stealth] (-1pt,0) -- (1pt,0);
+}
+
+% --- Indice locale ---
+    % Pacchetto di riferimento: etoc
+    \newcommand{\chaptertoc}[1][]{%
+      \etocsettocstyle{\addsec*{#1}}{}%
+      \localtableofcontents%
+      \vspace{1cm}
+    }

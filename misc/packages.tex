@@ -1,0 +1,68 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 				% Lettere accentate
+\usepackage[english]{babel}
+\PassOptionsToPackage{nopatch}{microtype}	% Fix TOC
+
+% Various
+\usepackage{lipsum}
+\usepackage{url}
+\usepackage{quoting}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{etoc, blindtext}    % Local index
+\usepackage[many]{tcolorbox}    % Box
+% \tcbuselibrary{theorems}
+% \usepackage{enumitem}
+
+% --- STYLE ---
+% ArsClassica
+\usepackage[eulerchapternumbers,beramono,pdfspacing, parts]{classicthesis}
+\usepackage{arsclassica}
+
+% --- MATHS AND PHYSICS ---
+\usepackage[italicdiff]{physics}
+\usepackage{siunitx}\sisetup{parse-numbers = false}
+\usepackage{amsthm}
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{bm}
+
+% --- GRAPHICS ---
+% Xcolor
+\usepackage{xcolor}
+
+% Pgfplots
+\usepackage{pgfplots}
+
+% Graphicx
+\usepackage{graphicx}
+
+% Tikz and Tikz3D
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}		% Marks
+\usetikzlibrary{arrows.meta} 				% Arrows
+\usetikzlibrary{angles}
+% \usetikzlibrary{shadings}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc} 						% Perform calculations on positions
+\usetikzlibrary{patterns,patterns.meta} 	% Draw patterns
+
+% Tikz packages for quantum computing
+\usepackage{quantikz}                       % Quantum circuits
+\usepackage{blochsphere}                    % Bloch's sphere
+
+% --- BIBLIOGRAPHY AND LICENSE ---
+% Bibliography (in TeXstudio: Options/Configure TeXstudio/Build/Default bibliography tool: set "Biber")
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[backend=biber,sorting=none]{biblatex}
+% DocLicense
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
