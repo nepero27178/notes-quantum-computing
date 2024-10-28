@@ -343,11 +343,65 @@ so that
         0 \\ 0 \\ 1 \\ 0
     \end{bmatrix} = \ket{\mathbf{x}_0}
 \]
-This operator performs the said conversion of phase flip to amplitude increment. Let us now give a circuit representation of $D$.
+This operator performs the said conversion of phase flip to amplitude increment. Then the complete circuit is given by
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{0}$} & \gate{H} \gategroup[
+		wires=2,
+		steps=1,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=above,
+			color=palette-main,
+			anchor=south,
+			yshift=-0.5em}
+		]{\color{palette-main}\small Initialize} & \gate[3]{U_f} \gategroup[
+		wires=3,
+		steps=1,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=below,
+			color=palette-main,
+			anchor=north,
+			yshift=-0.5em,
+			align=center}
+		]{\small Flip sign \\ \small (phase kick-back)} & \gate[2]{D} \gategroup[
+		wires=2,
+		steps=1,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=above,
+			color=palette-main,
+			anchor=south,
+			yshift=-0.5em}
+		]{\color{palette-main}\small Select} & \rstick[2]{$\ket{\mathbf{x}_0}$} \\
+		\lstick{$\ket{0}$} & \gate{H} & & & \\
+		\lstick{$\ket{-}$} & & & & \rstick{$\ket{-}$}
+	\end{quantikz}
+\end{center}
+The first part initializes the circuit implementing Hadamard superpositions; the second performs phase kick-back through the ``oracle'', thus flipping the sign of the target index entry in the superposition; the last part converts the sign flip in an amplitude change, reducing the superposition to a selected pure state - the searched index entry.
 
 \subsection{Quantum circuit for $2$ qubits}
 
-Consider the following circuit
+Now, let us give a circuit representation of $D$. Consider the following circuit
 \begin{center}
     \begin{quantikz}
         & \gate{H} & \gate{X} \gategroup[
@@ -360,8 +414,12 @@ Consider the following circuit
                 fill=palette-main!20,
                 inner xsep=2pt},
             background,
-            label style={label position=below,anchor=north,yshift=-0.2cm}
-        ]{$D^\star$} & & \ctrl{1} & & \gate{X} & \gate{H} \\
+            label style={
+           		label position=below,
+           		color=palette-main,
+           		anchor=north,
+           		yshift=-0.2cm}
+        ]{\small $D^\star$} & & \ctrl{1} & & \gate{X} & \gate{H} \\
         & \gate{H} & \gate{X} & \gate{H} & \targ{} & \gate{H} & \gate{X} & \gate{H}
     \end{quantikz}
 \end{center}
@@ -450,9 +508,205 @@ Let us now prove those statements.
              & & & 1
         \end{bmatrix}
     \]
-    It coincides with the desired matrix apart from an overall sign ($\pi$ phase). In the following step we compose this operator with parallel Hadamards, and the global operator is composed with an identity over the third qubit. Then we can simply ignore this phase difference.
+    It coincides with the desired matrix apart from an overall sign ($\pi$ phase). In the following step we compose this operator with parallel Hadamards, and the global operator is composed with an identity over the third qubit. We can simply ignore this phase difference.
 \end{proof}
 
-\subsection{Graphical interpretation: inversion about the mean}
+\begin{proof}[Second statement]
+	It is pretty much straightforward, from here, to compute the operator $(H \otimes H) D^\star (H \otimes H)$ using $HZH=X$,
+	\[
+		(H \otimes H) D^\star (H \otimes H) = \Id \otimes \Id
+		- \frac{1}{2} \lrS{\Id \otimes \Id + X \otimes \Id + \Id \otimes X + X \otimes X}
+	\]
+	Since:
+	\[
+	\begin{aligned}
+		\lrS{\Id \otimes \Id} &= \begin{bmatrix}
+			1 & & & \\
+			& 1 & & \\
+			& & 1 & \\
+			& & & 1
+		\end{bmatrix} \\ 
+		\lrS{X \otimes X} &= \begin{bmatrix}
+			& & & 1 \\
+			& & 1 & \\
+			& 1 & & \\
+			1 & & &
+		\end{bmatrix}
+	\end{aligned}
+	\qquad
+	\begin{aligned}
+		\lrS{X \otimes \Id} &= \begin{bmatrix}
+			& & 1 & \\
+			& & & 1 \\
+			1 & & & \\
+			& 1 & &
+		\end{bmatrix} \\
+		\lrS{\Id \otimes X} &= \begin{bmatrix}
+			& 1 & & \\
+			1 & & & \\
+			& & & 1 \\
+			& & 1 &
+		\end{bmatrix}
+	\end{aligned}
+	\]
+	then the circuit has matrix representation
+	\[
+	- \frac{1}{2} \begin{bmatrix}
+		-1 &  1 &  1 & 1 \\
+		1 & -1 &  1 & 1 \\
+		1 &  1 & -1 & 1 \\
+		1 &  1 &  1 & -1 \\
+	\end{bmatrix}
+	\]
+	which is precisely the one we stated for $D$, apart from the already discussed sign flip. Then the circuit implements the desired operator.
+\end{proof}
+
+The second part of the proof could have been taken out as well by recognizing in the circuit the simplifications $HXH=Z$ and $HXXH=\Id$.
+
+\subsection{Graphic interpretation: inversion about the mean}
+
+\begin{figure}
+	\centering
+	\input{introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/pictures/phi2 weight distribution}
+	\caption{Weight distribution for the state $\ket{\phi_2}$.}
+	\label{fig:phi2 weight distribution}
+\end{figure}
+
+As we shall see in the next sections, the simplest and most useful way to think about the algorithm is via a graphic interpretation. Consider the initialized state $\ket{\psi_2}$,
+\[
+	\ket{\psi_2} = \lrS{\frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \ket{\mathbf{x}}} \otimes \frac{\ket{0} - \ket{1}}{\sqrt{2}} = \ket{\phi_2} \otimes \ket{-}
+\]
+with
+\[
+	\ket{\phi_2} = \frac{\ket{00}+\ket{01}+\ket{10}+\ket{11}}{2}
+\]
+The amplitudes are all real. We can give this state a sort ``weight-representation'' as in Fig.~\ref{fig:phi2 weight distribution}. Let us see what the algorithm does on this distribution. First, it flips the sign of the target index entry (say $\mathbf{x}_0 = 10$), as in Fig.~\ref{subfig:phi3 weight distribution},
+\[
+	\ket{\phi_3} = \frac{\ket{00}+\ket{01}-\ket{10}+\ket{11}}{2}
+\]
+Then the $D$ operation is performed (just over the subspace of $\ket{\phi_2}$), and we end up with the distribution of Fig.~\ref{subfig:phi4 weight distribution},
+\[
+	\ket{\phi_4} = \ket{10}	
+\]
+
+What kind of mathematical operation gives the same result?  In Fig.~\ref{subfig:phi3 weight distribution} the average amplitude is drawn as a dashed line,
+\[
+	\alpha \equiv \ev{\alpha_\mathbf{x}} = \frac{1}{4} \lrS{\frac{1}{2} + \frac{1}{2} - \frac{1}{2} + \frac{1}{2}} = \frac{1}{4}
+\]
+with $\alpha_\mathbf{x} \equiv \braket{\mathbf{x}}{\psi_3}$. To invert the amplitude $\alpha_\mathbf{x}$ about the mean means to perform
+\[
+	\alpha_\mathbf{x} \to \alpha - (\alpha_\mathbf{x} - \alpha) = 2 \alpha - \alpha_\mathbf{x} 
+\]
+Which is the correct operation indeed:
+\[
+	\frac{1}{2} \to 0
+	\qquad
+	- \frac{1}{2} \to 1
+\]
+Evidently inversion about the mean preserves the mean itself,
+\[
+	\ev{2 \alpha - \alpha_\mathbf{x}} = 2 \alpha - \alpha = \alpha
+\]
+
+So we can interpret the gate $D$ as performing \textbf{inversion about the mean}, at least for $2$ qubits. We gained quantum advantage: the oracle was called just once, instead of (on average) twice.
+
+\begin{figure}
+	\centering
+	\subfloat[Weight distribution for the state $\ket{\phi_3}$.]{
+		\label{subfig:phi3 weight distribution}
+		\input{introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/pictures/phi3 weight distribution}
+	}
+	\subfloat[Weight distribution for the state $\ket{\phi_4}$.]{
+		\label{subfig:phi4 weight distribution}
+		\input{introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/pictures/phi4 weight distribution}
+	}
+	\caption{The weight distributions for the states $\ket{\psi_3}$ (Fig.~\ref{subfig:phi3 weight distribution}, where the dashed line represents the average amplitude) and $\ket{\psi_4}$ (Fig.~\ref{subfig:phi4 weight distribution}).}
+	\label{fig:phi3-4 weight distribution}
+\end{figure}
+
+\subsection{How to generalize?}
+
+From last section we learned that, to efficiently search an index entry into a $2$-qubits unstructured database, we must first initialized an equally balanced superposition of computational states, then perform a phase kick-back via the oracle and finally an inversion about the mean of the final weight distribution. The question now is: can we scale up this procedure?
+
+Take for example a $3$-qubits system (a database of $8$ entries). With identical notation as in the above section,
+\[
+	\ket{\phi_2} = \frac{\ket{000}+\ket{001}+\ket{010}+\ket{011}+\ket{100}+\ket{101}+\ket{110}+\ket{111}}{2\sqrt{2}}
+\]
+Let $\mathbf{x}_0 = 010$. After phase kick-back,
+\[
+	\ket{\phi_3} = \frac{\ket{000}+\ket{001}-\ket{010}+\ket{011}+\ket{100}+\ket{101}+\ket{110}+\ket{111}}{2\sqrt{2}}
+\]
+For the above distribution, the average amplitude is $3/8\sqrt{2}$; then, inverting about the mean
+\[
+	\mathbf{x} \neq 010 \colon
+	\frac{1}{2\sqrt{2}} \to \frac{1}{4\sqrt{2}}
+	\qquad
+	010 \colon
+	- \frac{1}{2\sqrt{2}} \to \frac{5}{4\sqrt{2}}
+\]
+We got close: the amplitude of the searched index entry has actually been magnified, but did not saturate. What if we repeat?
+\[
+	\mathbf{x} \neq 010 \colon \frac{1}{4\sqrt{2}}
+	\qquad
+	010 \colon
+	\frac{5}{4\sqrt{2}} \to - \frac{5}{4\sqrt{2}}
+\]
+The new average is
+\[
+	\frac{1}{8} \lrR{\frac{7}{4\sqrt{2}} - \frac{5}{4\sqrt{2}}} = \frac{1}{16 \sqrt{2}}
+\]
+then
+\[
+	\mathbf{x} \neq 010 \colon
+	\frac{1}{4\sqrt{2}} \to -\frac{1}{8\sqrt{2}}
+	\qquad
+	010 \colon
+	-\frac{5}{4\sqrt{2}} \to \frac{11}{8\sqrt{2}}
+\]
+We magnified the amplitude of the most probable state, the searched one: $11/8 > 5/4$.
+
+Repetition takes us closer to saturation. This is the core concept of Grover's algorithm: an optimal number of iterations of the process exists such that the amplitude of the searched index entry in the balanced superposition gets magnified above a certain desired level.
 
 \subsection{Generalization to $n$ qubits}
+
+Finally, we discuss Grover's algorithm in its entirety: we start by the solution, and later connect it with the above sections. Let $\ket{e}$ be the equally balanced superposition in computational basis,
+\[
+	\ket{e} \equiv \frac{1}{2^{n/2}} \sum_{\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}} \ket{\mathbf{x}}
+\]
+and let $\mathbf{Z}_0$ be the ``extension'' of the Pauli $Z$ to $n$ qubits,
+\[
+	\mathbf{Z}_0 \ket{00\cdots0} = \ket{00\cdots0}
+	\qquad
+	\mathbf{Z}_0 \ket{\mathbf{x}} = -\ket{\mathbf{x}} \qq{for} \mathbf{x} \neq 00\cdots0
+\]
+It acts as identity over the empty string and flips sign of all other entries. Its Hadamard transform is
+\[
+	\mathbf{Z}_e \equiv H^{\otimes n} \mathbf{Z}_0 H^{\otimes n}
+\]
+and, as can be easily guessed, acts as identity over $\ket{e}$,
+\[
+\begin{aligned}
+	H^{\otimes n} \mathbf{Z}_0 H^{\otimes n} \ket{e} &= H^{\otimes n} \mathbf{Z}_0 H^{\otimes n} H^{\otimes n} \ket{00\cdots0} \\
+	&= H^{\otimes n} \mathbf{Z}_0 \ket{00\cdots0} \\ 
+	&= H^{\otimes n} \ket{00\cdots0} = \ket{e}
+\end{aligned}
+\]
+and flips the sign of other states $\ket{\psi} \perp \ket{e}$: states of this kind can be written as the Hadamard transform of a non-empty string $\ket{\mathbf{x}}$ with $\mathbf{x} \neq 00\cdots0$,
+\[
+\begin{aligned}
+	H^{\otimes n} \mathbf{Z}_0 H^{\otimes n} \ket{\psi} &= H^{\otimes n} \mathbf{Z}_0 H^{\otimes n} H^{\otimes n} \ket{\mathbf{x}} \\
+	&= H^{\otimes n} \mathbf{Z}_0 \ket{\mathbf{x}} \\ 
+	&= - H^{\otimes n} \ket{\mathbf{x}} = - \ket{\psi}
+\end{aligned}
+\]
+In summary:
+\[
+	\mathbf{Z}_e \ket{e} = \ket{e}
+	\qquad
+	\mathbf{Z}_e \ket{\psi} = -\ket{\psi} \qq{for} \ket{\psi} \perp \ket{e}
+\]
+Finally, let $G$ be the \textbf{Grover's iterator}
+\[
+	G \equiv \mathbf{Z}_e U_f
+\]
+with $U_f$, as always, the $f$-oracle. We claim that an optimal number $k^\star \in \N$ exists such that iterating $G$ as many times we magnify the amplitude of the searched entry.

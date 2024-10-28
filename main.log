@@ -1,0 +1,2472 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.8.23)  28 OCT 2024 12:10
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-07-20>
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrbook.cls
+Document Class: scrbook 2023/07/07 v3.41 KOMA-Script document class (book)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrlfile-hook.s
+ty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+ (/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+))) (/usr/local/share/miktex-texmf/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2023/07/07 v3.41 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip49
+\scr@dte@tocline@numbox=\box52
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 135.
+Package scrbook Info: You've used standard option `11pt'.
+(scrbook)             This is correct!
+(scrbook)             Internally I'm using `fontsize=11pt'.
+(scrbook)             If you'd like to set the option with \KOMAoptions,
+(scrbook)             you'd have to use `fontsize=11pt' there
+(scrbook)             instead of `11pt', too.
+Class scrbook Info: You've used standard option `openright'.
+(scrbook)           This is correct!
+(scrbook)           Internally I'm using `open=right'.
+(scrbook)           If you'd like to set the option with \KOMAoptions,
+(scrbook)           you'd have to use `open=right' there
+(scrbook)           instead of `openright', too.
+Class scrbook Info: File `scrsize11pt.clo' used to setup font sizes on input li
+ne 2691.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2023/07/07 v3.41 KOMA-Script font size class option (11pt
+)
+) (/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/typearea.sty
+Package: typearea 2023/07/07 v3.41 KOMA-Script package (type area)
+\ta@bcor=\skip50
+\ta@div=\count194
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internally I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip51
+\ta@vblk=\skip52
+\ta@temp=\skip53
+\footheight=\skip54
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 14.22636pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 408.2971pt
+(typearea)              DIV departure   = -3%
+(typearea)              \evensidemargin = 44.38632pt
+(typearea)              \oddsidemargin  = 0.28453pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 514.20023pt
+(typearea)              \topmargin      = 12.2347pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1799.
+)
+\c@part=\count195
+\c@chapter=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\scr@dte@chapter@maxnumwidth=\skip55
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\chapter on input line 5990.
+\scr@dte@section@maxnumwidth=\skip56
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\section on input line 6001.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\section on input line 6001.
+\scr@dte@part@maxnumwidth=\skip57
+Class scrbook Info: using compatibility default `afterindent=true'
+(scrbook)           for `\part on input line 6010.
+\scr@dte@subsection@maxnumwidth=\skip58
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsection on input line 6020.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsection on input line 6020.
+\scr@dte@subsubsection@maxnumwidth=\skip59
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsubsection on input line 6030.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsubsection on input line 6030.
+\scr@dte@paragraph@maxnumwidth=\skip60
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\paragraph on input line 6041.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\paragraph on input line 6041.
+\scr@dte@subparagraph@maxnumwidth=\skip61
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subparagraph on input line 6051.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subparagraph on input line 6051.
+\abovecaptionskip=\skip62
+\belowcaptionskip=\skip63
+\c@pti@nb@sid@b@x=\box53
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 7242.
+\scr@dte@figure@maxnumwidth=\skip64
+\c@figure=\count268
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 7259.
+\scr@dte@table@maxnumwidth=\skip65
+\c@table=\count269
+Class scrbook Info: Redefining `\numberline' on input line 7430.
+\bibindent=\dimen141
+) (misc/packages.tex (/usr/local/share/miktex-texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/share/miktex-texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+)
+(/usr/local/share/miktex-texmf/tex/generic/babel/babel.sty
+Package: babel 2024/06/26 v24.7 The Babel package
+\babel@savecnt=\count270
+\U@D=\dimen142
+\l@unhyphenated=\language79
+
+(/usr/local/share/miktex-texmf/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count271
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(/usr/local/share/miktex-texmf/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(/usr/local/share/miktex-texmf/tex/latex/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 108.
+))
+(/usr/local/share/miktex-texmf/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/lipsum/lipsum.sty
+(/usr/local/share/miktex-texmf/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/local/share/miktex-texmf/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-07-20 L3 programming layer (loader) 
+
+(/usr/local/share/miktex-texmf/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count272
+\l__pdf_internal_box=\box54
+))
+Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count273
+\l__lipsum_a_int=\count274
+\l__lipsum_b_int=\count275
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/local/share/miktex-texmf/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/quoting/quoting.sty
+Package: quoting 2014/01/28 v0.1c Consolidated environment for displayed text
+
+(/usr/local/share/miktex-texmf/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count276
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+\quo@toppartop=\skip66
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen143
+\captionmargin=\dimen144
+\caption@leftmargin=\dimen145
+\caption@rightmargin=\dimen146
+\caption@width=\dimen147
+\caption@indent=\dimen148
+\caption@parindent=\dimen149
+\caption@hangindent=\dimen150
+Package caption Info: KOMA-Script document class detected.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/caption/caption-koma.sto
+File: caption-koma.sto 2023/09/08 v2.0e Adaption of the caption package to the 
+KOMA-Script document classes (AR)
+))
+\c@caption@flags=\count277
+\c@continuedfloat=\count278
+Package caption Info: KOMA-Script scrextend package detected.
+\caption@addmargin@hsize=\dimen151
+\caption@addmargin@linewidth=\dimen152
+) (/home/nepero27178/.miktex/texmfs/install/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count279
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count280
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/etoc/etoc.sty
+Package: etoc 2023/10/29 v1.2d Completely customisable TOCs (JFB)
+
+(/usr/local/share/miktex-texmf/tex/latex/tools/multicol.sty
+Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
+\c@tracingmulticols=\count281
+\mult@box=\box55
+\multicol@leftmargin=\dimen153
+\c@unbalance=\count282
+\c@collectmore=\count283
+\doublecol@number=\count284
+\multicoltolerance=\count285
+\multicolpretolerance=\count286
+\full@width=\dimen154
+\page@free=\dimen155
+\premulticols=\dimen156
+\postmulticols=\dimen157
+\multicolsep=\skip67
+\multicolbaselineskip=\skip68
+\partial@page=\box56
+\last@line=\box57
+\mc@boxedresult=\box58
+\maxbalancingoverflow=\dimen158
+\mult@rightbox=\box59
+\mult@grightbox=\box60
+\mult@firstbox=\box61
+\mult@gfirstbox=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\c@minrows=\count287
+\c@columnbadness=\count288
+\c@finalcolumnbadness=\count289
+\last@try=\dimen159
+\multicolovershoot=\dimen160
+\multicolundershoot=\dimen161
+\mult@nat@firstbox=\box99
+\colbreak@box=\box100
+\mc@col@check@num=\count290
+)
+\Etoc@toctoks=\toks20
+\c@etoc@tocid=\count291
+\etoc@framed@titlebox=\box101
+\etoc@framed@contentsbox=\box102
+)
+(/usr/local/share/miktex-texmf/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/share/miktex-texmf/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count292
+\c@Blindtext=\count293
+\c@blind@countparstart=\count294
+\blind@countxx=\count295
+\blindtext@numBlindtext=\count296
+\blind@countyy=\count297
+\c@blindlist=\count298
+\c@blindlistlevel=\count299
+\c@blindlist@level=\count300
+\blind@listitem=\count301
+\c@blind@listcount=\count302
+\c@blind@levelcount=\count303
+\blind@mathformula=\count304
+\blind@Mathformula=\count305
+\c@blind@randomcount=\count306
+\c@blind@randommax=\count307
+\c@blind@pangramcount=\count308
+\c@blind@pangrammax=\count309
+)
+(/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/07/10 version 6.3.0 text color boxes
+
+(/usr/local/share/miktex-texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks21
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box103
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/share/miktex-texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/share/miktex-texmf/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+)
+(/usr/local/share/miktex-texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks22
+\pgfkeys@temptoks=\toks23
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks24
+))
+\pgf@x=\dimen166
+\pgf@y=\dimen167
+\pgf@xa=\dimen168
+\pgf@ya=\dimen169
+\pgf@xb=\dimen170
+\pgf@yb=\dimen171
+\pgf@xc=\dimen172
+\pgf@yc=\dimen173
+\pgf@xd=\dimen174
+\pgf@yd=\dimen175
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count310
+\c@pgf@countb=\count311
+\c@pgf@countc=\count312
+\c@pgf@countd=\count313
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count314
+ (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count315
+\pgfsyssoftpath@bigbuffer@items=\count316
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/share/miktex-texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+
+Package xcolor Warning: Package option `usenames' is obsolete and ignored on in
+put line 266.
+
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(/usr/local/share/miktex-texmf/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+
+(/usr/local/share/miktex-texmf/tex/latex/tools/array.sty
+Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+\col@sep=\dimen176
+\ar@mcellbox=\box104
+\extrarowheight=\dimen177
+\NC@list=\toks28
+\extratabsurround=\skip69
+\backup@length=\skip70
+\ar@cellbox=\box105
+)
+\everycr=\toks29
+\minrowclearance=\skip71
+\rownum=\count317
+)
+(/usr/local/share/miktex-texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen178
+\pgfmath@count=\count318
+\pgfmath@box=\box106
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count319
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen179
+\pgf@picmaxx=\dimen180
+\pgf@picminy=\dimen181
+\pgf@picmaxy=\dimen182
+\pgf@pathminx=\dimen183
+\pgf@pathmaxx=\dimen184
+\pgf@pathminy=\dimen185
+\pgf@pathmaxy=\dimen186
+\pgf@xx=\dimen187
+\pgf@xy=\dimen188
+\pgf@yx=\dimen189
+\pgf@yy=\dimen190
+\pgf@zx=\dimen191
+\pgf@zy=\dimen192
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen193
+\pgf@path@lasty=\dimen194
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen195
+\pgf@shorten@start@additional=\dimen196
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box107
+\pgf@hbox=\box108
+\pgf@layerbox@main=\box109
+\pgf@picture@serial@count=\count320
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen197
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen198
+\pgf@pt@y=\dimen199
+\pgf@pt@temp=\dimen256
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen257
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen258
+\pgf@sys@shading@range@num=\count321
+\pgf@shadingcount=\count322
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box110
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box111
+) (/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen259
+\pgf@nodesepend=\dimen260
+)
+(/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/local/share/miktex-texmf/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen261
+\pgffor@skip=\dimen262
+\pgffor@stack=\toks33
+\pgffor@toks=\toks34
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count323
+\pgfplotmarksize=\dimen263
+)
+\tikz@lastx=\dimen264
+\tikz@lasty=\dimen265
+\tikz@lastxsaved=\dimen266
+\tikz@lastysaved=\dimen267
+\tikz@lastmovetox=\dimen268
+\tikz@lastmovetoy=\dimen269
+\tikzleveldistance=\dimen270
+\tikzsiblingdistance=\dimen271
+\tikz@figbox=\box112
+\tikz@figbox@bg=\box113
+\tikz@tempbox=\box114
+\tikz@tempbox@bg=\box115
+\tikztreelevel=\count324
+\tikznumberofchildren=\count325
+\tikznumberofcurrentchild=\count326
+\tikz@fig@count=\count327
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count328
+\pgfmatrixcurrentcolumn=\count329
+\pgf@matrix@numberofcolumns=\count330
+)
+\tikz@expandcount=\count331
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/share/miktex-texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks35
+\verbatim@line=\toks36
+\verbatim@in@stream=\read4
+)
+(/usr/local/share/miktex-texmf/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/share/miktex-texmf/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks37
+)
+\tcb@titlebox=\box116
+\tcb@upperbox=\box117
+\tcb@lowerbox=\box118
+\tcb@phantombox=\box119
+\c@tcbbreakpart=\count332
+\c@tcblayer=\count333
+\c@tcolorbox@number=\count334
+\l__tcobox_tmpa_box=\box120
+\l__tcobox_tmpa_dim=\dimen272
+\tcb@temp=\box121
+\tcb@temp=\box122
+\tcb@temp=\box123
+\tcb@temp=\box124
+
+(/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.3.0'
+\c@tcbrastercolumn=\count335
+\c@tcbrasterrow=\count336
+\c@tcbrasternum=\count337
+\c@tcbraster=\count338
+) (/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.3.0'
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tikzfill/tikzfill-common.st
+y
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tikzfill/tikzlibraryfill.im
+age.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box125
+))
+(/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.3.0'
+)) (/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.3.0'
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/share/miktex-texmf/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box126
+\tcb@totalupperbox=\box127
+\tcb@totallowerbox=\box128
+)
+(/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.3.0'
+) (/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.3.0'
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip72
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks38
+\ex@=\dimen273
+))
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen274
+)
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count339
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count340
+\leftroot@=\count341
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count342
+\DOTSCASE@=\count343
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box129
+\strutbox@=\box130
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen275
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count344
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count345
+\dotsspace@=\muskip18
+\c@parentequation=\count346
+\dspbrk@lvl=\count347
+\tag@help=\toks39
+\row@=\count348
+\column@=\count349
+\maxfields@=\count350
+\andhelp@=\toks40
+\eqnshift@=\dimen276
+\alignsep@=\dimen277
+\tagshift@=\dimen278
+\tagwidth@=\dimen279
+\totwidth@=\dimen280
+\lineht@=\dimen281
+\@envbody=\toks41
+\multlinegap=\skip73
+\multlinetaggap=\skip74
+\mathdisplay@stack=\toks42
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+))
+(/usr/local/share/miktex-texmf/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.3.0'
+\tcbfitdim=\dimen282
+\tcb@lowerfitdim=\dimen283
+\tcb@upperfitdim=\dimen284
+\tcb@cur@hbadness=\count351
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/classicthesis/classicthesis
+.sty
+Package: classicthesis 2018/06/03 v4.6 Typographic style for a classic-looking 
+thesis
+ (/usr/local/share/miktex-texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/share/miktex-texmf/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+(/usr/local/share/miktex-texmf/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(/usr/local/share/miktex-texmf/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+
+Package xcolor Warning: Package option `usenames' is obsolete and ignored on in
+put line 147.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/bera/beramono.sty
+Package: beramono 2004/01/31 (WaS)
+)
+LaTeX Font Info:    Trying to load font information for U+eur on input line 202
+.
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/ueur.fd
+File: ueur.fd 2013/01/14 v3.01 Euler Roman
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/microtype.sty
+Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
+\MT@toks=\toks43
+\MT@tempbox=\box131
+\MT@count=\count352
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
+LaTeX Info: Redefining \leftprotrusion on input line 1062.
+\MT@prot@toks=\toks44
+LaTeX Info: Redefining \rightprotrusion on input line 1081.
+LaTeX Info: Redefining \textls on input line 1392.
+\MT@outer@kern=\dimen285
+LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
+\MT@listname@count=\count353
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/microtype-pdftex.
+def
+File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip75
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2024/03/29 v3.1b microtype main configuration file (RS)
+))
+Package classicthesis Info: A4 paper, Palatino or other on input line 251.
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = areaset
+(typearea)             BCOR = 14.22636pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 336.0pt
+(typearea)              \evensidemargin = 92.58438pt
+(typearea)              \oddsidemargin  = 24.38356pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 666.04997pt
+(typearea)              \topmargin      = -40.58768pt
+(typearea)              \headheight     = 15.95pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 251.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/mparhack/mparhack.sty
+Package: mparhack 2021-05-02 v1.5 (T. Sgouros and S. Ulrich)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen286
+\lightrulewidth=\dimen287
+\cmidrulewidth=\dimen288
+\belowrulesep=\dimen289
+\belowbottomsep=\dimen290
+\aboverulesep=\dimen291
+\abovetopsep=\dimen292
+\cmidrulesep=\dimen293
+\cmidrulekern=\dimen294
+\defaultaddspace=\dimen295
+\@cmidla=\count354
+\@cmidlb=\count355
+\@aboverulesep=\dimen296
+\@belowrulesep=\dimen297
+\@thisruleclass=\count356
+\@lastruleclass=\count357
+\@thisrulewidth=\dimen298
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/textcase/textcase.sty
+Package: textcase 2023/07/27 v1.04 Text only upper/lower case changing (DPC)
+Package textcase Info: Defining Legacy names on input line 20.
+)
+Package classicthesis Info: Using microtype for character spacing.Make sure you
+r pdflatex is version 1.40 or higher. on input line 321.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrlayer-scrpag
+e.sty
+Package: scrlayer-scrpage 2023/07/07 v3.41 KOMA-Script package (end user interf
+ace for scrlayer)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2023/07/07 v3.41 KOMA-Script package (defining layers and pag
+e styles)
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 218
+3.
+)
+Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
+(scrlayer-scrpage)             alias to `pageheadfoot' on input line 1106.
+)
+1: section
+1: chapter
+1: chapter
+1: section
+
+Class scrbook Warning: Usage of package `titlesec' together
+(scrbook)              with a KOMA-Script class is not recommended.
+(scrbook)              I'd suggest to use KOMA-Script features
+(scrbook)              like \setkomafont, \RedeclareSectionCommand, \sectionlin
+esformat
+(scrbook)              and several others to re-configure section
+(scrbook)              headings.
+(scrbook)              Nevertheless, using requested
+(scrbook)              package `titlesec' on input line 362.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box132
+\beforetitleunit=\skip76
+\aftertitleunit=\skip77
+\ttl@plus=\dimen299
+\ttl@minus=\dimen300
+\ttl@toksa=\toks45
+\titlewidth=\dimen301
+\titlewidthlast=\dimen302
+\titlewidthfirst=\dimen303
+
+
+Package titlesec Warning: Non standard sectioning command \section
+(titlesec)                detected. Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command \subsection
+(titlesec)                detected. Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command \subsubsection
+(titlesec)                detected. Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command \paragraph
+(titlesec)                detected. Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command \subparagraph
+(titlesec)                detected. Using default spacing and no format.
+
+)
+
+Class scrbook Warning: Usage of package `tocloft' together
+(scrbook)              with a KOMA-Script class is not recommended.
+(scrbook)              I'd suggest to use options like `listof=entryprefix',
+(scrbook)              commands like `\listoflofentryname' or
+(scrbook)              `\listoflotentryname', and `\DeclareTOCStyleEntry' or
+(scrbook)              `\RedeclareSectionCommand' instead of this package,
+(scrbook)              because it breaks several KOMA-Script features of
+(scrbook)              the list of figures, list of tables and table of
+(scrbook)              contents, i.e., options like `listof=numbered',
+(scrbook)              `listof=flat or `toc=flat', commands like
+(scrbook)              `\BeforeTOCHead{...}' and `\AfterTOCHead{...}',
+(scrbook)              `\BeforeStartingTOC{...}' and \AfterStartingTOC{...}',
+(scrbook)              all features of `\DeclareTOCStyleEntry',
+(scrbook)              and the ToC entry features of `\DeclareSecionCommand'
+(scrbook)              and `\RedeclareSectionCommand' of levels
+(scrbook)              `part', `section', `subsection',
+(scrbook)              `subsubsection', `paragraph' and `subparagraph'.
+(scrbook)              Nevertheless, using requested
+(scrbook)              package `tocloft' on input line 416.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip78
+\cftbeforetoctitleskip=\skip79
+\cftaftertoctitleskip=\skip80
+\cftbeforepartskip=\skip81
+\cftpartnumwidth=\skip82
+\cftpartindent=\skip83
+\cftbeforechapskip=\skip84
+\cftchapindent=\skip85
+\cftchapnumwidth=\skip86
+\cftbeforesecskip=\skip87
+\cftsecindent=\skip88
+\cftsecnumwidth=\skip89
+\cftbeforesubsecskip=\skip90
+\cftsubsecindent=\skip91
+\cftsubsecnumwidth=\skip92
+\cftbeforesubsubsecskip=\skip93
+\cftsubsubsecindent=\skip94
+\cftsubsubsecnumwidth=\skip95
+\cftbeforeparaskip=\skip96
+\cftparaindent=\skip97
+\cftparanumwidth=\skip98
+\cftbeforesubparaskip=\skip99
+\cftsubparaindent=\skip100
+\cftsubparanumwidth=\skip101
+\cftbeforeloftitleskip=\skip102
+\cftafterloftitleskip=\skip103
+\cftbeforefigskip=\skip104
+\cftfigindent=\skip105
+\cftfignumwidth=\skip106
+\c@lofdepth=\count358
+\c@lotdepth=\count359
+\cftbeforelottitleskip=\skip107
+\cftafterlottitleskip=\skip108
+\cftbeforetabskip=\skip109
+\cfttabindent=\skip110
+\cfttabnumwidth=\skip111
+)
+\newnumberwidth=\skip112
+\beforebibskip=\skip113
+\newchnumberwidth=\skip114
+\figurelabelwidth=\skip115
+\tablelabelwidth=\skip116
+
+Using KOMA-command "deffootnote" for footnote setup
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/koma-script/scrtime.sty
+Package: scrtime 2023/07/07 v3.41 KOMA-Script package (time of LaTeX run)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/carlisle/remreset.sty
+
+Package remreset Warning: The remreset package is obsolete:
+(remreset)                \@removefromreset is defined.
+
+) (/usr/local/share/miktex-texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys
+.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/local/share/miktex-texmf/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/gettitlestring/gettitlest
+ring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count360
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen304
+\Hy@linkcounter=\count361
+\Hy@pagecounter=\count362
+
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count363
+
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count364
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen305
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count365
+\Field@Width=\dimen306
+\Fld@charsize=\dimen307
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/local/share/miktex-texmf/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count366
+\c@Item=\count367
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+
+(/usr/local/share/miktex-texmf/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count368
+\c@bookmark@seq@number=\count369
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfileche
+ck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/uniquecounter/uniquecount
+er.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip117
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 679.
+Package hyperref Info: Option `linktocpage' set `true' on input line 679.
+Package hyperref Info: Option `breaklinks' set `true' on input line 679.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/arsclassica/arsclassica.sty
+Package: arsclassica 2017/10/31
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = areaset
+(typearea)             BCOR = 14.22636pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 370.0pt
+(typearea)              \evensidemargin = 69.91772pt
+(typearea)              \oddsidemargin  = 13.05023pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 700.04997pt
+(typearea)              \topmargin      = -51.92102pt
+(typearea)              \headheight     = 15.95pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 17.
+LaTeX Info: Redefining \spacedallcaps on input line 48.
+LaTeX Info: Redefining \spacedlowsmallcaps on input line 50.
+
+Package scrlayer-scrpage Warning: replacing deprecated \clearscrplain by
+(scrlayer-scrpage)                \clearplainofpairofpagestyles on input line 1
+51.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 184.
+Package hyperref Info: Option `linktocpage' set `true' on input line 184.
+Package hyperref Info: Option `breaklinks' set `true' on input line 184.
+Package hyperref Info: Option `pageanchor' set `true' on input line 184.
+Package hyperref Info: Option `plainpages' set `false' on input line 184.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 184.
+
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 184.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 184.
+
+Package hyperref Warning: Option `hyperfootnotes' has already been used,
+(hyperref)                setting the option has no effect on input line 184.
+
+
+Package hyperref Warning: Option `pdfpagelabels' has already been used,
+(hyperref)                setting the option has no effect on input line 184.
+
+) (/home/nepero27178/.miktex/texmfs/install/tex/latex/physics/physics.sty
+Package: physics 
+
+(/usr/local/share/miktex-texmf/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-05-08 L3 Experimental document command parser
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2024-08-01 v3.3.20 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count370
+\l__siunitx_number_exponent_fixed_int=\count371
+\l__siunitx_number_min_decimal_int=\count372
+\l__siunitx_number_min_integer_int=\count373
+\l__siunitx_number_round_precision_int=\count374
+\l__siunitx_number_lower_threshold_int=\count375
+\l__siunitx_number_upper_threshold_int=\count376
+\l__siunitx_number_group_first_int=\count377
+\l__siunitx_number_group_size_int=\count378
+\l__siunitx_number_group_minimum_int=\count379
+\l__siunitx_angle_tmp_dim=\dimen308
+\l__siunitx_angle_marker_box=\box133
+\l__siunitx_angle_unit_box=\box134
+\l__siunitx_compound_count_int=\count380
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/translations/translations.s
+ty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box135
+\l__siunitx_table_tmp_dim=\dimen309
+\l__siunitx_table_column_width_dim=\dimen310
+\l__siunitx_table_integer_box=\box136
+\l__siunitx_table_decimal_box=\box137
+\l__siunitx_table_uncert_box=\box138
+\l__siunitx_table_before_box=\box139
+\l__siunitx_table_after_box=\box140
+\l__siunitx_table_before_dim=\dimen311
+\l__siunitx_table_carry_dim=\dimen312
+\l__siunitx_unit_tmp_int=\count381
+\l__siunitx_unit_position_int=\count382
+\l__siunitx_unit_total_int=\count383
+) (/home/nepero27178/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks46
+\thm@bodyfont=\toks47
+\thm@headfont=\toks48
+\thm@notefont=\toks49
+\thm@headpunct=\toks50
+\thm@preskip=\skip118
+\thm@postskip=\skip119
+\thm@headsep=\skip120
+\dth@everypar=\toks51
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/xpatch/xpatch.sty
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+)
+Class scrbook Info: amsthm's \deferred@thm@head patched.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/zref/zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count384
+Package zref Info: New property: abspage on input line 67.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip121
+\c@mdf@globalstyle@cnt=\count385
+\mdf@skipabove@length=\skip122
+\mdf@skipbelow@length=\skip123
+\mdf@leftmargin@length=\skip124
+\mdf@rightmargin@length=\skip125
+\mdf@innerleftmargin@length=\skip126
+\mdf@innerrightmargin@length=\skip127
+\mdf@innertopmargin@length=\skip128
+\mdf@innerbottommargin@length=\skip129
+\mdf@splittopskip@length=\skip130
+\mdf@splitbottomskip@length=\skip131
+\mdf@outermargin@length=\skip132
+\mdf@innermargin@length=\skip133
+\mdf@linewidth@length=\skip134
+\mdf@innerlinewidth@length=\skip135
+\mdf@middlelinewidth@length=\skip136
+\mdf@outerlinewidth@length=\skip137
+\mdf@roundcorner@length=\skip138
+\mdf@footenotedistance@length=\skip139
+\mdf@userdefinedwidth@length=\skip140
+\mdf@needspace@length=\skip141
+\mdf@frametitleaboveskip@length=\skip142
+\mdf@frametitlebelowskip@length=\skip143
+\mdf@frametitlerulewidth@length=\skip144
+\mdf@frametitleleftmargin@length=\skip145
+\mdf@frametitlerightmargin@length=\skip146
+\mdf@shadowsize@length=\skip147
+\mdf@extratopheight@length=\skip148
+\mdf@subtitleabovelinewidth@length=\skip149
+\mdf@subtitlebelowlinewidth@length=\skip150
+\mdf@subtitleaboveskip@length=\skip151
+\mdf@subtitlebelowskip@length=\skip152
+\mdf@subtitleinneraboveskip@length=\skip153
+\mdf@subtitleinnerbelowskip@length=\skip154
+\mdf@subsubtitleabovelinewidth@length=\skip155
+\mdf@subsubtitlebelowlinewidth@length=\skip156
+\mdf@subsubtitleaboveskip@length=\skip157
+\mdf@subsubtitlebelowskip@length=\skip158
+\mdf@subsubtitleinneraboveskip@length=\skip159
+\mdf@subsubtitleinnerbelowskip@length=\skip160
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/mdframed/md-frame-1.mdf
+File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
+)
+\mdf@frametitlebox=\box141
+\mdf@footnotebox=\box142
+\mdf@splitbox@one=\box143
+\mdf@splitbox@two=\box144
+\mdf@splitbox@save=\box145
+\mdfsplitboxwidth=\skip161
+\mdfsplitboxtotalwidth=\skip162
+\mdfsplitboxheight=\skip163
+\mdfsplitboxdepth=\skip164
+\mdfsplitboxtotalheight=\skip165
+\mdfframetitleboxwidth=\skip166
+\mdfframetitleboxtotalwidth=\skip167
+\mdfframetitleboxheight=\skip168
+\mdfframetitleboxdepth=\skip169
+\mdfframetitleboxtotalheight=\skip170
+\mdffootnoteboxwidth=\skip171
+\mdffootnoteboxtotalwidth=\skip172
+\mdffootnoteboxheight=\skip173
+\mdffootnoteboxdepth=\skip174
+\mdffootnoteboxtotalheight=\skip175
+\mdftotallinewidth=\skip176
+\mdfboundingboxwidth=\skip177
+\mdfboundingboxtotalwidth=\skip178
+\mdfboundingboxheight=\skip179
+\mdfboundingboxdepth=\skip180
+\mdfboundingboxtotalheight=\skip181
+\mdf@freevspace@length=\skip182
+\mdf@horizontalwidthofbox@length=\skip183
+\mdf@verticalmarginwhole@length=\skip184
+\mdf@horizontalspaceofbox=\skip185
+\mdfsubtitleheight=\skip186
+\mdfsubsubtitleheight=\skip187
+\c@mdfcountframes=\count386
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count387
+\c@mdf@env@i=\count388
+\c@mdf@env@ii=\count389
+\c@mdf@zref@counter=\count390
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
+
+(/usr/local/share/miktex-texmf/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count391
+\calc@Bcount=\count392
+\calc@Adimen=\dimen313
+\calc@Bdimen=\dimen314
+\calc@Askip=\skip188
+\calc@Bskip=\skip189
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count393
+\calc@Cskip=\skip190
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count394
+\l_MT_multwidth_dim=\dimen315
+\origjot=\skip191
+\l_MT_shortvdotswithinadjustabove_dim=\dimen316
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen317
+\l_MT_above_intertext_sep=\dimen318
+\l_MT_below_intertext_sep=\dimen319
+\l_MT_above_shortintertext_sep=\dimen320
+\l_MT_below_shortintertext_sep=\dimen321
+\xmathstrut@box=\box146
+\xmathstrut@dim=\dimen322
+)
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/share/miktex-texmf/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+Package bm Info: No bold for \OMX/zplm/m/n, using \pmb.
+\symboldupright=\mathgroup10
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+)
+
+Package xcolor Warning: Package option `usenames' is obsolete and ignored on in
+put line 36.
+
+(/usr/local/share/miktex-texmf/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks52
+\t@pgfplots@tokb=\toks53
+\t@pgfplots@tokc=\toks54
+\pgfplots@tmpa=\dimen323
+\c@pgfplots@coordindex=\count395
+\c@pgfplots@scanlineindex=\count396
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks55
+\t@pgf@tokb=\toks56
+\t@pgf@tokc=\toks57
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfutil-common-lists.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count397
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count398
+\t@pgfplotstable@a=\toks58
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count399
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen324
+\pgfdecoratedremainingdistance=\dimen325
+\pgfdecoratedinputsegmentcompleteddistance=\dimen326
+\pgfdecoratedinputsegmentremainingdistance=\dimen327
+\pgf@decorate@distancetomove=\dimen328
+\pgf@decorate@repeatstate=\count400
+\pgfdecorationsegmentamplitude=\dimen329
+\pgfdecorationsegmentlength=\dimen330
+)
+\tikz@lib@dec@box=\box147
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
+ntourlua.code.tex)
+\pgfplots@numplots=\count401
+\pgfplots@xmin@reg=\dimen331
+\pgfplots@xmax@reg=\dimen332
+\pgfplots@ymin@reg=\dimen333
+\pgfplots@ymax@reg=\dimen334
+\pgfplots@zmin@reg=\dimen335
+\pgfplots@zmax@reg=\dimen336
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tikz-3dplot/tikz-3dplot.sty
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrary3d.code.tex
+File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen337
+)))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.markings.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.markings.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen338
+\pgfarrowlength=\dimen339
+\pgfarrowwidth=\dimen340
+\pgfarrowlinewidth=\dimen341
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryangles.code.tex
+File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.meta.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibrarypatterns.met
+a.code.tex))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/quantikz/quantikz.sty
+Package: quantikz 2023/05/24 typeset quantum circuit diagrams
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/quantikz/tikzlibraryquantik
+z2.code.tex (/home/nepero27178/.miktex/texmfs/install/tex/latex/xargs/xargs.sty
+Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
+(/usr/local/share/miktex-texmf/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/local/share/miktex-texmf/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/share/miktex-texmf/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks59
+\XKV@tempa@toks=\toks60
+)
+\XKV@depth=\count402
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\xargs@max=\count403
+\xargs@toksa=\toks61
+\xargs@toksb=\toks62
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/xstring/xstring.sty
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/xstring/xstring.tex
+\xs_counta=\count404
+\xs_countb=\count405
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/tikz-cd/tikzlibrarycd.code.
+tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymath.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfpu.code.tex)
+\tikz@math@for@depth=\count406
+\tikz@math@dimen=\dimen342
+\tikz@math@toks=\toks63
+)
+\pgf@layerbox@background=\box148
+\pgf@layerboxsaved@background=\box149
+\pgf@layerbox@quantback=\box150
+\pgf@layerboxsaved@quantback=\box151
+\c@dummy=\count407
+\myl=\skip192
+\myh=\skip193
+\myd=\skip194
+\c@aaa=\count408
+LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 
+1044.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/ot1pplx.fd
+File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
+)
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
+1044.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
+1044.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
+1044.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
+1044.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
+4.
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
+4.
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+\c@wirenumberpermute=\count409
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/blochsphere/blochsphere.sty
+Package: blochsphere 2015/09/15 v1.1 blochsphere drawing package
+Package: blochsphere 2015/08/17
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count410
+\csq@gtype=\count411
+\csq@glevel=\count412
+\csq@qlevel=\count413
+\csq@maxlvl=\count414
+\csq@tshold=\count415
+\csq@ltx@everypar=\toks64
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+Package csquotes Info: Redefining alias 'italian' -> 'italian/guillemets'.
+)
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count416
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count417
+\c@listtotal=\count418
+\c@listcount=\count419
+\c@liststart=\count420
+\c@liststop=\count421
+\c@citecount=\count422
+\c@citetotal=\count423
+\c@multicitecount=\count424
+\c@multicitetotal=\count425
+\c@instcount=\count426
+\c@maxnames=\count427
+\c@minnames=\count428
+\c@maxitems=\count429
+\c@minitems=\count430
+\c@citecounter=\count431
+\c@maxcitecounter=\count432
+\c@savedcitecounter=\count433
+\c@uniquelist=\count434
+\c@uniquename=\count435
+\c@refsection=\count436
+\c@refsegment=\count437
+\c@maxextratitle=\count438
+\c@maxextratitleyear=\count439
+\c@maxextraname=\count440
+\c@maxextradate=\count441
+\c@maxextraalpha=\count442
+\c@abbrvpenalty=\count443
+\c@highnamepenalty=\count444
+\c@lownamepenalty=\count445
+\c@maxparens=\count446
+\c@parenlevel=\count447
+\blx@tempcnta=\count448
+\blx@tempcntb=\count449
+\blx@tempcntc=\count450
+\c@blx@maxsection=\count451
+\blx@maxsegment@0=\count452
+\blx@notetype=\count453
+\blx@parenlevel@text=\count454
+\blx@parenlevel@foot=\count455
+\blx@sectionciteorder@0=\count456
+\blx@sectionciteorderinternal@0=\count457
+\blx@entrysetcounter=\count458
+\blx@biblioinstance=\count459
+\labelnumberwidth=\skip195
+\labelalphawidth=\skip196
+\biblabelsep=\skip197
+\bibitemsep=\skip198
+\bibnamesep=\skip199
+\bibinitsep=\skip256
+\bibparsep=\skip257
+\bibhang=\skip258
+\blx@bcfin=\read5
+\blx@bcfout=\write5
+\blx@langwohyphens=\language80
+\c@mincomprange=\count460
+\c@maxcomprange=\count461
+\c@mincompwidth=\count462
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count463
+\c@savedafterword=\count464
+\c@annotator=\count465
+\c@savedannotator=\count466
+\c@author=\count467
+\c@savedauthor=\count468
+\c@bookauthor=\count469
+\c@savedbookauthor=\count470
+\c@commentator=\count471
+\c@savedcommentator=\count472
+\c@editor=\count473
+\c@savededitor=\count474
+\c@editora=\count475
+\c@savededitora=\count476
+\c@editorb=\count477
+\c@savededitorb=\count478
+\c@editorc=\count479
+\c@savededitorc=\count480
+\c@foreword=\count481
+\c@savedforeword=\count482
+\c@holder=\count483
+\c@savedholder=\count484
+\c@introduction=\count485
+\c@savedintroduction=\count486
+\c@namea=\count487
+\c@savednamea=\count488
+\c@nameb=\count489
+\c@savednameb=\count490
+\c@namec=\count491
+\c@savednamec=\count492
+\c@translator=\count493
+\c@savedtranslator=\count494
+\c@shortauthor=\count495
+\c@savedshortauthor=\count496
+\c@shorteditor=\count497
+\c@savedshorteditor=\count498
+\c@labelname=\count499
+\c@savedlabelname=\count500
+\c@institution=\count501
+\c@savedinstitution=\count502
+\c@lista=\count503
+\c@savedlista=\count504
+\c@listb=\count505
+\c@savedlistb=\count506
+\c@listc=\count507
+\c@savedlistc=\count508
+\c@listd=\count509
+\c@savedlistd=\count510
+\c@liste=\count511
+\c@savedliste=\count512
+\c@listf=\count513
+\c@savedlistf=\count514
+\c@location=\count515
+\c@savedlocation=\count516
+\c@organization=\count517
+\c@savedorganization=\count518
+\c@origlocation=\count519
+\c@savedoriglocation=\count520
+\c@origpublisher=\count521
+\c@savedorigpublisher=\count522
+\c@publisher=\count523
+\c@savedpublisher=\count524
+\c@language=\count525
+\c@savedlanguage=\count526
+\c@origlanguage=\count527
+\c@savedoriglanguage=\count528
+\c@pageref=\count529
+\c@savedpageref=\count530
+\shorthandwidth=\skip259
+\shortjournalwidth=\skip260
+\shortserieswidth=\skip261
+\shorttitlewidth=\skip262
+\shortauthorwidth=\skip263
+\shorteditorwidth=\skip264
+\locallabelnumberwidth=\skip265
+\locallabelalphawidth=\skip266
+\localshorthandwidth=\skip267
+\localshortjournalwidth=\skip268
+\localshortserieswidth=\skip269
+\localshorttitlewidth=\skip270
+\localshortauthorwidth=\skip271
+\localshorteditorwidth=\skip272
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count531
+\c@textcitetotal=\count532
+\c@textcitemaxnames=\count533
+\c@biburlbigbreakpenalty=\count534
+\c@biburlbreakpenalty=\count535
+\c@biburlnumpenalty=\count536
+\c@biburlucpenalty=\count537
+\c@biburllcpenalty=\count538
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count539
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count540
+\c@bbx:relatedtotal=\count541
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2024-07-20 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/doclicense/doclicense.sty
+Package: doclicense 2023/10/01 v3.3.0 Support for putting documents under a lic
+ense
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+))
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/hyperxmp/hyperxmp.sty
+Package: hyperxmp 2024/03/17 v5.13 Store hyperref metadata in XMP format
+\hyxmp@aep@toks=\toks65
+\@hyxmp@count=\count542
+
+(/usr/local/share/miktex-texmf/tex/latex/oberdiek/ifdraft.sty
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+))
+\doclicense@hsize=\skip273
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/doclicense/doclicense-engli
+sh.ldf
+File: doclicense-english.ldf 
+)) (misc/graphic setup.tex) (misc/definitions.tex
+\c@example=\count543
+\c@theorem=\count544
+\c@lemma=\count545
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/ccicons/ccicons.sty
+Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
+)
+LaTeX Font Info:    Trying to load font information for T1+pplj on input line 4
+3.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/t1pplj.fd
+File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
+)
+
+LaTeX Warning: Unused global option(s):
+    [abstracton].
+
+(main.aux
+No file misc/cover.aux.
+No file misc/license.aux.
+No file misc/intro.aux.
+No file introduction to quantum computation/chapters/basis of quantum computing
+/basis of quantum computing.aux.
+
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/the deutsch-josza and grover's algorithms.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+Package scrbase Info: activating english \partname on input line 43.
+Package scrbase Info: activating english \chaptername on input line 43.
+Package scrbase Info: activating english \appendixname on input line 43.
+Package scrbase Info: activating english \figurename on input line 43.
+Package scrbase Info: activating english \tablename on input line 43.
+Package scrbase Info: activating english \contentsname on input line 43.
+Package scrbase Info: activating english \listfigurename on input line 43.
+Package scrbase Info: activating english \listtablename on input line 43.
+Package scrbase Info: activating english \bibname on input line 43.
+Package scrbase Info: activating english \indexname on input line 43.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\Etoc@tf=\read6
+
+(/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count546
+\scratchdimen=\dimen343
+\scratchbox=\box152
+\nofMPsegments=\count547
+\nofMParguments=\count548
+\everyMPshowfont=\toks66
+\MPscratchCnt=\count549
+\MPscratchDim=\dimen344
+\MPnumerator=\count550
+\makeMPintoPDFobject=\count551
+\everyMPtoPDFconversion=\toks67
+) (/usr/local/share/miktex-texmf/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/share/miktex-texmf/tex/latex/00miktex/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Info: Redefining \microtypecontext on input line 43.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No font expansion.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/mt-ppl.cfg
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+)
+Package hyperref Info: Link coloring ON on input line 43.
+
+(main.out) (main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+Class scrbook Info: loading recommended package `bookmark'.
+(scrbook)           Using `bookmark' together with `hyperref' is recommended,
+(scrbook)           because of handling of possible bookmark level gaps.
+(scrbook)           You can avoid loading `bookmark' with KOMA-Script option
+(scrbook)           `bookmarkpackage=false' before \begin{document} and
+(scrbook)           you can avoid this message adding:
+(scrbook)             \usepackage{bookmark}
+(scrbook)           before \begin{document} on input line 43.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
+)
+\BKM@id=\count552
+))
+
+Package siunitx Warning: Detected the "physics" package:
+(siunitx)                omitting definition of \qty.
+(siunitx)                
+(siunitx)                If you want to use \qty with the siunitx definition,
+(siunitx)                add 
+(siunitx)                
+(siunitx)                    \AtBeginDocument{\RenewCommandCopy\qty\SI}
+(siunitx)                
+(siunitx)                to your preamble.
+
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/translations/dicts/translat
+ions-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 43.
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/local/share/miktex-texmf/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 43.
+Package biblatex Info: Reference segment=0 on input line 43.
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+LaTeX Font Info:    Trying to load font information for T1+iwona on input line 
+51.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/iwona/t1iwona.fd
+File: t1iwona.fd 2008/07/22 v0.995 font definition file for T1/iwona (MW)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `iwona' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `zplm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (3.8192pt too wide) in paragraph at lines 51--51
+ [][] []\T1/pplj/m/n/10.95 Graphic in-ter-pre-ta-tion: in-ver-sion about the me
+an []  
+ []
+
+
+
+[1
+
+
+
+
+{/home/nepero27178/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}{/home/neper
+o27178/.miktex/texmfs/install/fonts/enc/dvips/iwona/ec-iwona.enc}{/home/nepero2
+7178/.miktex/texmfs/install/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{/usr/local/s
+hare/miktex-texmf/fonts/enc/dvips/base/8r.enc}]
+\openout2 = `"introduction to quantum computation/chapters/the deutsch-josza an
+d grover's algorithms/the deutsch-josza and grover's algorithms.aux"'.
+
+
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/the deutsch-josza and grover's algorithms.tex
+Chapter 1.
+
+
+[2
+
+
+
+
+]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 15.0049pt on input line 1.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 1.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 15.0049pt on input line 1.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 1.
+
+Overfull \hbox (3.8192pt too wide) in paragraph at lines 1--1
+ [][] []\T1/pplj/m/n/10.95 Graphic in-ter-pre-ta-tion: in-ver-sion about the me
+an []  
+ []
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/iwona/m/sc/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[3]
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
+60.
+ (/home/nepero27178/.miktex/texmfs/install/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+
+[4]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/iwona/b/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/iwona/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 146.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 146.
+
+
+
+[6]
+Overfull \hbox (12.01187pt too wide) detected at line 207
+[] \OT1/zplm/m/n/10.95 = [] [] = [] \OMS/zplm/m/n/10.95 
+ []
+ []
+
+
+
+[7]
+
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 273.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 273.
+
+
+
+[9]
+
+[10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 402.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 402.
+
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 424.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 424.
+
+
+[11]
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/pictures/phi2 weight distribution.tex)
+
+[12]
+Overfull \hbox (12.88434pt too wide) in paragraph at lines 582--584
+\T1/pplj/m/n/10.95 The am-pli-tudes are all real. We can give this state a sort
+ ``weight-representation''
+ []
+
+
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/pictures/phi3 weight distribution.tex)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 618.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 618.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 9.37807pt on input line 618.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.29405pt on input line 618.
+
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/pictures/phi4 weight distribution.tex)
+Overfull \hbox (9.1557pt too wide) in paragraph at lines 618--623
+ [][][] 
+ []
+
+
+
+[13]
+
+[14]
+Overfull \hbox (0.94885pt too wide) in paragraph at lines 668--669
+[]\T1/pplj/m/n/10.95 Repetition takes us closer to sat-u-ra-tion. This is the c
+ore con-cept of Grover's
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 670.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 670.
+
+)
+
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+)
+(/home/nepero27178/.miktex/texmfs/install/tex/generic/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+[15]
+
+LaTeX Warning: Empty bibliography on input line 56.
+
+(main.aux
+No file misc/cover.aux.
+No file misc/license.aux.
+No file misc/intro.aux.
+No file introduction to quantum computation/chapters/basis of quantum computing
+/basis of quantum computing.aux.
+
+(introduction to quantum computation/chapters/the deutsch-josza and grover's al
+gorithms/the deutsch-josza and grover's algorithms.aux))
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 68317 strings out of 473900
+ 1612446 string characters out of 5733578
+ 2869495 words of memory out of 5000000
+ 90057 multiletter control sequences out of 15000+600000
+ 688933 words of font info for 228 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 129i,23n,138p,10901b,2355s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
+l/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share
+/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/mikte
+x-texmf/fonts/type1/public/amsfonts/euler/eurb10.pfb></home/nepero27178/.miktex
+/texmfs/install/fonts/type1/public/mathpazo/fplmbb.pfb></home/nepero27178/.mikt
+ex/texmfs/install/fonts/type1/public/mathpazo/fplmr.pfb></home/nepero27178/.mik
+tex/texmfs/install/fonts/type1/public/mathpazo/fplmri.pfb></home/nepero27178/.m
+iktex/texmfs/install/fonts/type1/public/fpl/fplrc8a.pfb></home/nepero27178/.mik
+tex/texmfs/install/fonts/type1/nowacki/iwona/iwonab.pfb></home/nepero27178/.mik
+tex/texmfs/install/fonts/type1/nowacki/iwona/iwonar.pfb></usr/local/share/mikte
+x-texmf/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/share/miktex-texmf/font
+s/type1/urw/palatino/uplr8a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/
+palatino/uplri8a.pfb>
+Output written on main.pdf (15 pages, 276496 bytes).
+PDF statistics:
+ 293 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 32473 words of extra memory for PDF output out of 35830 (max. 10000000)
+
