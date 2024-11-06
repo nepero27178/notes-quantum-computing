@@ -286,9 +286,9 @@ As we have already seen in Sec.~\ref{subsec:some comments on the ``phase kick-ba
 
 \begin{center}
     \begin{quantikz}[slice all,slice style={color=palette-main},slice titles=$\ket{\psi_\col}$]
-        \lstick[2]{$\ket{\mathbf{x}}$} & & \gate{H} & \gate[3]{U_f} & \\
+        \lstick[2]{$\ket{\mathbf{x}}$} & & \gate{H} & \gate[3]{U_f} & \rstick{$\cdots$} \\
         & & \gate{H} & & \rstick{$\cdots$} \\
-        \lstick{$\ket{-}$} & & & &
+        \lstick{$\ket{-}$} & & & & \rstick{$\cdots$}
     \end{quantikz}
 \end{center}
 As we already know,
@@ -705,8 +705,141 @@ In summary:
 	\qquad
 	\mathbf{Z}_e \ket{\psi} = -\ket{\psi} \qq{for} \ket{\psi} \perp \ket{e}
 \]
+It can be written as an operator as
+\[
+	\mathbf{Z}_e = 2 \op{e} - \Id
+\]
+as it is self-evident.
+
 Finally, let $G$ be the \textbf{Grover's iterator}
 \[
-	G \equiv \mathbf{Z}_e U_f
+	G \equiv \lrS{\mathbf{Z}_e \otimes \Id} U_f
 \]
-with $U_f$, as always, the $f$-oracle. We claim that an optimal number $k^\star \in \N$ exists such that iterating $G$ as many times we magnify the amplitude of the searched entry.
+with $U_f$, as always, the $f$-oracle. We implement it as in the following circuit,
+\begin{center}
+	\begin{quantikz}
+		\lstick{$1 \colon \ket{0}$} & \gate{H} & \gate[5]{U_f} \gategroup[
+		wires=5,
+		steps=2,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=below,
+			color=palette-main,
+			anchor=north,
+			yshift=-0.2cm}
+		]{\small $G$} & \gate[4]{\mathbf{Z}_e} & \rstick{$\ldots$} \\
+		\lstick{$2 \colon \ket{0}$} & \gate{H} & & & \rstick{$\ldots$} \\
+		\lstick{$\vdots\hphantom{\rangle}$} \\
+		\lstick{$n \colon \ket{0}$} & \gate{H} & & & \rstick{$\ldots$} \\
+		\lstick{$\ket{-}$} & & & & \rstick{$\ldots$}
+	\end{quantikz}
+\end{center}
+Evidently, the first step initializes the state as $\ket{e}$. We claim that an optimal number $k^\star \in \N$ exists such that iterating $G$ as many times we magnify the amplitude of the searched entry.
+
+Let $\mathbf{x}_0$ be the searched index entry. Then
+\[
+	\ket{e} = \cos\theta \ket{\mathbf{x}_\perp} + \sin\theta \ket{\mathbf{x}_0}
+\]
+with $\theta$ a parameter introduced due to normalization,
+\[
+	\sin \theta \equiv \frac{1}{2^{n/2}}
+\]
+and
+\[
+	\ket{\mathbf{x}_\perp} \equiv \frac{1}{2^{n/2}} \sum_{\mathbf{x} \neq \mathbf{x}_0} \ket{\mathbf{x}}
+\]
+(we omit the symbol $\mathbf{x} \in \lbrace 0,1 \rbrace^{\otimes n}$). The state $\ket{\mathbf{x}_\perp}$ is ``all the rest'' that is left, perpendicular to $\ket{\mathbf{x}_0}$. Before proceeding, let us define
+\[
+	\ket{\Bar{e}} \equiv - \sin\theta \ket{\mathbf{x}_\perp} + \cos\theta \ket{\mathbf{x}_0}
+\]
+Now, apply the oracle. It flips the sign of the part of the state parallel to $\ket{\mathbf{x}_0}$,
+\[
+	U_f \ket{e} = \lrS{\cos\theta \ket{\mathbf{x}_\perp} - \sin\theta \ket{\mathbf{x}_0}} \otimes \ket{-}
+\]
+as graphically represented in Fig.~\ref{fig:grover algorithm graphic}. Change basis:
+\[
+	\ket{\mathbf{x}_\perp} = \cos \theta \ket{e} - \sin \theta \ket{\Bar{e}}
+	\qquad
+	\ket{\mathbf{x}_0} = \sin \theta \ket{e} + \cos \theta \ket{\Bar{e}}
+\]
+Then:
+\[
+	U_f \ket{e} \otimes \ket{-} = \lrS{\cos 2\theta \ket{e} - \sin 2\theta \ket{\Bar{e}}} \otimes \ket{-}
+\]
+For simplicity, let
+\[
+	\ket{\psi_1} \equiv \cos 2\theta \ket{e} - \sin 2\theta \ket{\Bar{e}}
+\]
+
+\begin{figure}
+	\centering
+	\input{introduction to quantum computation/chapters/the deutsch-josza and grover's algorithms/pictures/grover algorithm graphic}
+	\caption{Representation of the states $\ket{\mathbf{x}_0}$, $\ket{\mathbf{y}_0}$, $\ket{e}$ and $\ket{\Bar{e}}$.}
+	\label{fig:grover algorithm graphic}
+\end{figure}
+
+Now, apply $\mathbf{Z}_e$: only the $\ket{\Bar{e}}$ part gets its sign flipped (ignore the $\ket{-}$ ancillary register)
+\[
+	\ket{\psi_3} \equiv \mathbf{Z}_e \ket{\psi_2} \ket{\Bar{e}} = \cos 2\theta \ket{e} + \sin 2\theta \ket{\Bar{e}}
+\]
+Get back to the first basis:
+\[
+	\ket{\psi_3} \equiv \cos 3\theta \ket{\mathbf{x}_\perp} + \sin 3\theta \ket{\mathbf{x}_0}
+\]
+We end up as in Fig.~\ref{fig:grover algorithm graphic}, where the angle $\theta$ is exaggerated for reasons of graphic clarity. If we now repeat these operation (flip about the $\mathbf{x}_\perp$ axis, then flip about the $e$ axis) we obtain another state. Our aim is to get as much close as possible to $\ket{\mathbf{x}_0}$.
+
+Two considerations are immediate: first, the larger the number of the qubits (which is, the more spacious the index), the smaller gets $\theta$ in the first place. Thus ``many'' operations may be needed to get anywhere close to the correct result. Second, after a certain number of operations to perform these flips may get us \textit{away} from our target. So our optimization problem is not solved exactly in the limit of infinitely many operations; instead, the solution we accept must be a delicate balance between available computational resources, acceptable error and the natural tendency of the algorithm to oscillate after a certain number of operations. 
+
+Iterate $k$ times: applying the $G$ iterator over $\ket{e}$ we get
+\[
+\begin{aligned}
+	G^k \ket{e} \otimes \ket{-} &= \cos\lrR{2k\theta} \ket{e} + \sin\lrR{2k\theta} \ket{\Bar{e}} \\
+	&= \sin\lrR{\vphantom{A^A}(2k+1)\theta} \ket{\mathbf{x}_0} + \cos\lrR{\vphantom{A^A}(2k+1)\theta} \ket{\mathbf{x}_\perp}
+\end{aligned}
+\]
+represented by the circuit
+\begin{center}
+	\begin{quantikz}
+		\lstick{$1 \colon \ket{0}$} & \gate{H} & \gate[5]{G} \gategroup[
+		wires=5,
+		steps=4,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=below,
+			color=palette-main,
+			anchor=north,
+			yshift=-0.2cm}
+		]{\small $G^k$} & \gate[5]{G} & \ \ldots \ & \gate[5]{G} & \meter{} \\
+		\lstick{$2 \colon \ket{0}$} & \gate{H} & & & \ \ldots \ & & \meter{} \\
+		\lstick{$\vdots\hphantom{\rangle}$} \\
+		\lstick{$n \colon \ket{0}$} & \gate{H} & & & \ \ldots \ & & \meter{} \\
+		\lstick{$\ket{-}$} & & & & \ \ldots \ & & \rstick{$\ket{-}$}
+	\end{quantikz}
+\end{center}
+In order to maximize the probability of measuring the right index entry $\mathbf{x}_0$ via the final measurements in the computational basis, we need to maximize the amplitude of the component $\ket{\mathbf{x}_0}$ in the superposition for $G^k \ket{e}$ with respect to $k$,
+\[
+	(2k +1)\theta \imp \frac{\pi}{2}
+	\qquad\implies\qquad
+	k \imp \frac{\pi}{4\theta} - \frac{1}{2}
+\]
+The optimal amount of iterations is given by
+\[
+	k^\star = \left\lfloor \frac{\pi}{4} \sqrt{2^n} \right\rfloor
+\]
+Notice that $k^\star$ is a measure of computational time, and scales like $\sqrt{2^n}$; classically, computational time would have scaled like $2^n$. We gained \textbf{quadratic quantum advantage}: it's not that much, but it's an honest work.
+
+In summary, Grover's algorithm allows for fast(er than classical) database search. It implements phase kick-back and forces the equally balanced state to approach the state in computational basis which represents the searched index entry - the one where the oracle gives positive result.
+
+Next chapter is devoted to another important quantum algorithm: \textbf{Quantum Fourier Transform}.

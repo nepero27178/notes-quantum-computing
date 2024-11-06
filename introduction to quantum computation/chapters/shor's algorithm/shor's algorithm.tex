@@ -1,0 +1,265 @@
+\chapter{Shor's algorithm}\chaptertoc{}\label{chap:shor's algorithm}
+
+\Comment{to do: intro;}
+
+When the number of logical qubits grows, it is customary to use different bases. A very important orthonormal basis defined for $2$ logical qubits is the \textbf{Bell basis}: starting from the computational basis,
+\[
+	\mathcal{B}^{(\mathrm{c})} \equiv \lbrace \ket{00},\ket{01},\ket{10},\ket{11} \rbrace
+\]
+we define
+\[
+	\begin{aligned}
+		\ket{\beta_{00}} &\equiv \frac{\ket{00}+\ket{11}}{\sqrt{2}} \\
+		\ket{\beta_{01}} &\equiv \frac{\ket{01}+\ket{10}}{\sqrt{2}} \\
+		\ket{\beta_{10}} &\equiv \frac{\ket{00}-\ket{11}}{\sqrt{2}} \\
+		\ket{\beta_{11}} &\equiv \frac{\ket{01}-\ket{10}}{\sqrt{2}} \\
+	\end{aligned}
+	\qquad
+	\mathcal{B}^{(\mathrm{b})} \equiv \lbrace \ket{\beta_{00}},\ket{\beta_{01}},\ket{\beta_{10}},\ket{\beta_{11}} \rbrace
+\]
+Bell states are entangled by definition; they become immensely useful, seen as shared resources, in protocols like the \textbf{Quantum Teleportation Protocol}.
+
+Bell states can be generated from computational states as follows,
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{i}$} & \gate{H} & \ctrl{1} & \rstick[2]{$\ket{\beta_{ij}}$} \\
+		\lstick{$\ket{j}$} & & \targ{} &
+	\end{quantikz}
+\end{center}
+being $i,j \in \lbrace 0,1 \rbrace$. We refer to this architecture as a ``Bell initializer''. Equivalently, to perform a ``Bell measurement'' over a $2$-qubits state means precisely
+\begin{center}
+	\begin{quantikz}
+		\lstick[2]{$\ket{\beta_{ij}}$} & \meter[2]{(\mathrm{b})} \\
+		& 
+	\end{quantikz}
+	$\qquad=\qquad$
+	\begin{quantikz}
+		\lstick[2]{$\ket{\beta_{ij}}$} & \ctrl{1} & \gate{H} & \meter{} \rstick{$i$} \\
+		& \targ{} & & \meter{} \rstick{$j$}
+	\end{quantikz}
+\end{center}
+Final measurements gives back two classical bits, $i$ and $j$.
+
+In order to get to Shor's algorithm, we need to discuss first the features of quantum communication.
+
+\section{No-cloning Theorem and Quantum Teleportation Protocol}
+
+This section is seemingly unrelated, but treats some essential concepts of Quantum Mechanics. To problem is simple: given two quantum subsystems physically separated, how do they exchange information? Which means: if information is stored \textit{here} in a qubit, how do we end up having the same information stored \textit{there} in another qubit?
+
+\subsection{No-cloning Theorem}
+
+We start off by a seemingly unrelated
+\begin{theorem}[No-cloning]
+	Let $\Hilbert^{(\mathrm{ab})}$ be the shared Hilbert space of two subsystems $\mathrm{a}$ and $\mathrm{b}$,
+	\[
+		\Hilbert^{(\mathrm{ab})} \equiv \Hilbert^{(\mathrm{a})} \otimes \Hilbert^{(\mathrm{b})}
+	\]
+	Let $\ket{\psi} \in \Hilbert^{(\mathrm{a})}$ (any generic pure state of subsystem $\mathrm{a}$) at the beginning. Similarly, let $\ket{e} \in \Hilbert^{(\mathrm{b})}$ be the ``blank'' state of the second subsystem. Then, no unitary operator $U$ exists such that
+	\[
+		U \ket{\psi} \otimes \ket{e} = e^{i \alpha\lrR{\psi,e}} \ket{\psi} \otimes \ket{\psi}
+	\]
+	(with $\alpha\lrR{\psi,e}$ a phase) for any $\ket{\psi}$ and $\ket{e}$.
+\end{theorem}
+In other words, \textbf{no quantum copier exists}. This does not mean no specific state can be cloned; instead, no machine can exists able to clone any state from one subsystem to another.
+
+\begin{proof}
+	The proof is utterly simple. Suppose said $U$ exists and take two states $\ket{\psi_1}, \ket{\psi_2} \in \Hilbert^{(\mathrm{a})}$. Then
+	\[
+	\begin{aligned}
+		\braket{\psi_1}{\psi_2} &= \braket{\psi_1}{\psi_2} \braket{e}{e} \\
+		&= \mel{\psi_1 e}{U^\dag U}{\psi_2 e} \\
+		&= e^{-i \lrS{\vphantom{A^A} \alpha\lrR{\psi_1,e}-\alpha\lrR{\psi_2,e} }} \braket{\psi_1}{\psi_2}^2
+	\end{aligned}
+	\]
+	Taking its absolute value,
+	\[
+		\abs{\braket{\psi_1}{\psi_2}} = \abs{\braket{\psi_1}{\psi_2}}^2
+		\quad\implies\quad
+		\abs{\braket{\psi_1}{\psi_2}} \in \lbrace 0,1 \rbrace
+	\]
+	which means: either $\ket{\psi_1} \perp \ket{\psi_2}$ or $\ket{\psi_1} = \ket{\psi_2}$ (up to a phase). So if $U$ is able to copy one particular state, it is not true that it can clone any other state. This is contradiction with the assumptions, thus $U$ does not exist.
+\end{proof}
+
+Now that we know this, it seems that in order to communicate any possible quantum state we cannot clone it. In other words, to get information travel from one subsystem to another the price we pay is the information loss in the ``communicating'' system. This is of course not true for classical architectures: the ability of copying a string of classical bit without destroying it lies at the very basics of classical computation devices.
+
+\subsection{Preliminaries to quantum teleportation}
+
+Two enjoyers of quantum communication, Alice and Bob, want to share quantum information. Alice owns another ``private'' qubit in state $\ket{\psi}$. She wants to apply some protocol ending up with Bob having his qubit in state $\ket{\psi}$. What does she do?
+
+Consider first a $2$-qubits system. A quantum $\Swap$ is efficiently performed by the circuit
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{\psi}$} & & \ctrl{1} & \targ{} & \ctrl{1} & & \rstick{$\ket{\phi}$} \\
+		\lstick{$\ket{\phi}$} & & \targ{} & \ctrl{-1} & \targ{} & & \rstick{$\ket{\psi}$}
+	\end{quantikz}
+\end{center}
+since:
+\begin{multline*}
+	\lrS{\vphantom{A^A} \op{0} \otimes \Id + \op{1} \otimes X}
+	\lrS{\vphantom{A^A} \Id \otimes \op{0} + X \otimes \op{1}}
+	\lrS{\vphantom{A^A} \op{0} \otimes \Id + \op{1} \otimes X} \\
+	= \op{00} + \ketbra{01}{10} + \ketbra{10}{01} + \op{11}
+\end{multline*}
+in matrix form (in the computational basis)
+\[
+	\lrS{\Swap} =
+	\begin{bmatrix}
+		1 & & & \\
+		& & 1 & \\
+		& 1 & & \\
+		& & & 1
+	\end{bmatrix}
+\]
+This is a swap indeed. It does not clone states and moves information as requested. There is a problem, though: Alice and Bob cannot be separated. The protocol works because $2$-qubits quantum gates are applied over the collective state. But we need to \textit{communicate}.
+
+We draw inspiration from a classical probabilistic communication protocol. Take the classical circuit,
+\begin{center}
+	\begin{quantikz}
+		\lstick{$v$} & \ctrl{1} & & \\
+		\lstick[2]{$e$} & \targ{} & \ctrl{1} & \\
+		& & \targ{} & \rstick{$v$}
+	\end{quantikz}
+\end{center}
+with
+\[
+	v \equiv \begin{bmatrix}
+		p \\ 1-p
+	\end{bmatrix}
+	\quad\qq{and}\quad
+	e \equiv \begin{bmatrix}
+		1/2 \\ 0 \\ 0 \\ 1/2
+	\end{bmatrix}
+\]
+The bit $v$ is in state $0$ with probability $p$ and in state $1$ with probability $1-p$. The two correlated bits $e$ are in state $00$ with probability $1/2$ and in state $11$ with probability $1/2$. Now, let Alice read the first line and Bob read the last line. The intermediate communication line is \textbf{ancillary}. Bob ends up reading its bit with the same probability distribution as the original bit of Alice.
+
+\begin{proof}
+	Applying the first $\cnot$ operator, with probability $p$ the first of the correlated bits is confirmed ($00 \to 00$ and $11 \to 11$), and with probability $1-p$ is negated ($00 \to 01$ and $11 \to 10$):
+	\[
+		\cnot(1,2) \colon
+		\begin{bmatrix}
+			1/2 \\ 0 \\ 0 \\ 1/2
+		\end{bmatrix} 
+		\quad\to\quad
+		\frac{1}{2} \begin{bmatrix}
+			p \\ 1-p \\ 1-p \\ p
+		\end{bmatrix}
+	\]
+	Here $\cnot(1,2)$ indicates the control (first bit) and the target (second bit).
+	The second $\cnot$ acts only for the last two entries of the above vector, $10$ and $11$, and inverts them
+	\[
+		\cnot(2,3) \colon		
+		\frac{1}{2} \begin{bmatrix}
+			p \\ 1-p \\ 1-p \\ p
+		\end{bmatrix}
+		\quad\to\quad
+		\frac{1}{2} \begin{bmatrix}
+			p \\ 1-p \\ p \\ 1-p
+		\end{bmatrix}
+	\]
+	then the probability of measuring $0$ on Bob's bit is $p/2 + p/2 = p$, the probability of measuring $1$ is $(1-p)/2 + (1-p)/2 = 1-p$. Bob reads a bit identical to $v$, which is, has received $v$ (notice also that Alice still has her copy of $v$).
+\end{proof}
+
+In this classical protocol the main feature is the presence of an ancillary bit, shared by the parts, in a state which can be mapped easily on its entangled quantum analog -- the Bell state $\ket{\beta_{00}}$.
+
+\subsection{Shared resources}
+
+In order to perform quantum teleportation, a very important conceptual step is to look to entanglement as a \textit{resource}. Entanglement cannot be used by itself for communication, as it is commonly known; but it establishes correlations between subsystems we can exploit.
+
+First thing, let us look to the immediate extension of the classical probabilistic teleportation protocol. There we introduced an \textit{ancillary system}: could we use it in a quantum architecture to make the $\Swap$ act ``at distance''?
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{\psi}$} & \targ{} & \ctrl{2} & \targ{} & \rstick{$\ket{\phi}$} \\
+		\lstick{$\ket{\mu}$} & & & & \rstick{$\ket{\mu}$} \\
+		\lstick{$\ket{\phi}$} & \ctrl{-2} & \targ{} & \ctrl{-2} & \rstick{$\ket{\psi}$}
+	\end{quantikz}
+\end{center}
+with $\ket{\mu}$ the ancillary qubit. If we initialize $\ket{\phi} = \ket{0}$, we can as well ignore the first $\cnot$,
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{\psi}$} & \ctrl{2} & \targ{} & \rstick{$\ket{0}$} \\
+		\lstick{$\ket{\mu}$} & & & \rstick{$\ket{\mu}$} \\
+		\lstick{$\ket{0}$} & \targ{} & \ctrl{-2} & \rstick{$\ket{\psi}$}
+	\end{quantikz}
+\end{center}
+We now exploit the identity
+\begin{center}
+	\begin{quantikz}
+		& \ctrl{2} & \\
+		& & \\
+		& \targ{} &
+	\end{quantikz}
+	$\qquad \simeq \qquad$
+	\begin{quantikz}
+		& \ctrl{1} & & \ctrl{1} & & \\
+		& \targ{} & \ctrl{1} & \targ{} & \ctrl{1} & \\
+		& & \targ{} & & \targ{} &
+	\end{quantikz}
+\end{center}
+Insert it inside the precedent circuit. Also, initialize $\ket{\mu} = \ket{+}$; the first $\cnot$ (acting from the top wire on the middle wire) is ineffective over this state, being $X \ket{+} = \ket{+}$ and we may ignore it. Then the circuit is reduced to
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{\psi}$} & & \ctrl{1} & & \targ{} & \rstick{$\ket{0}$} \\
+		\lstick{$\ket{+}$} & \ctrl{1} & \targ{} & \ctrl{1} & & \rstick{$\ket{+}$} \\
+		\lstick{$\ket{0}$} & \targ{} & & \targ{} & \ctrl{-2} & \rstick{$\ket{\psi}$}
+	\end{quantikz}
+\end{center}
+To initialize the ancillary state we need an Hadamard gate; moreover, we may insert two identities $H^2 = \Id$. Then
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{\psi}$} & & & \ctrl{1} \gategroup[
+		wires=2,
+		steps=2,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=above,
+			color=palette-main,
+			anchor=south,
+			align=center,
+			yshift=-0.5em}
+		]{\color{palette-main}\small Bell \\[-1ex] \small measurement} & \gate{H} & \gate{H} \gategroup[
+		wires=1,
+		steps=3,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=above,
+			color=palette-main,
+			anchor=south,
+			yshift=-0.5em}
+		]{\color{palette-main}\small $HXH = Z$} & \targ{} & \gate{H} & \gate{H} & \rstick{$\ket{0}$} \\
+		\lstick{$\ket{0}$} & \gate{H} \gategroup[
+		wires=2,
+		steps=2,
+		style={
+			dashed,
+			rounded corners,
+			color=palette-main,
+			fill=palette-main!20,
+			inner xsep=2pt},
+		background,
+		label style={
+			label position=below,
+			color=palette-main,
+			anchor=north,
+			align=center,
+			yshift=-0.5em}
+		]{\color{palette-main}\small Bell \\[-1ex] \small initializer} & \ctrl{1} & \targ{} & & \ctrl{1} & & & & \rstick{$\ket{+}$} \\
+		\lstick{$\ket{0}$} & & \targ{} & & & \targ{} & \ctrl{-2} & & & \rstick{$\ket{\psi}$}
+	\end{quantikz}
+\end{center}
+As highlighted in the circuit, we can exploit the identity $HXH=Z$ on the top wire. The last Hadamard gate can be ignored on the same wire by taking the output as $\ket{+}$.
+Moreover, we recognize a Bell measurement architecture on the top and ancillary wires.
+Finally, see the ancillary and bottom wires to be initialized in the $\ket{\beta_{00}}$ Bell state. Then the above circuit gets reduced to: \Comment{Go on...}
+
+\subsection{Quantum Teleportation Protocol}

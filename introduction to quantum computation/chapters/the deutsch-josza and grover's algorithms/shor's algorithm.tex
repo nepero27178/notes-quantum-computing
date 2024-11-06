@@ -1,0 +1,110 @@
+\chapter{Shor's algorithm}\chaptertoc{}\label{chap.shor's algorithm}
+
+\Comment{to do: intro;}
+
+When the number of logical qubits grows, it is customary to use different bases. A very important orthonormal basis defined for $2$ logical qubits is the \textbf{Bell basis}: starting from the computational basis,
+\[
+	\mathcal{B}^{(\mathrm{c})} \equiv \lbrace \ket{00},\ket{01},\ket{10},\ket{11} \rbrace
+\]
+we define
+\[
+	\begin{aligned}
+		\ket{\beta_{00}} &\equiv \frac{\ket{00}+\ket{11}}{\sqrt{2}} \\
+		\ket{\beta_{01}} &\equiv \frac{\ket{01}+\ket{10}}{\sqrt{2}} \\
+		\ket{\beta_{10}} &\equiv \frac{\ket{00}-\ket{11}}{\sqrt{2}} \\
+		\ket{\beta_{11}} &\equiv \frac{\ket{01}-\ket{10}}{\sqrt{2}} \\
+	\end{aligned}
+	\qquad
+	\mathcal{B}^{(\mathrm{b})} \equiv \lbrace \ket{\beta_{00}},\ket{\beta_{01}},\ket{\beta_{10}},\ket{\beta_{11}} \rbrace
+\]
+Bell states are entangled by definition; they become immensely useful, seen as shared resources, in protocols like the \textbf{Quantum Teleportation Protocol}.
+
+Bell states can be generated from computational states as follows,
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{i}$} & \gate{H} & \ctrl{1} & \rstick[2]{$\ket{\beta_{ij}}$} \\
+		\lstick{$\ket{j}$} & & \targ{} &
+	\end{quantikz}
+\end{center}
+being $i,j \in \lbrace 0,1 \rbrace$. Equivalently, to perform a ``Bell measurement'' over a $2$-qubits state means precisely
+\begin{center}
+	\begin{quantikz}
+		\lstick[2]{$\ket{\beta_{ij}}$} & \meter[2]{(\mathrm{b})} \\
+		& 
+	\end{quantikz}
+	$\qquad=\qquad$
+	\begin{quantikz}
+		\lstick[2]{$\ket{\beta_{ij}}$} & \ctrl{1} & \gate{H} & \meter{} \rstick{$i$} \\
+		& \targ{} & & \meter{} \rstick{$j$}
+	\end{quantikz}
+\end{center}
+Final measurements gives back two classical bits, $i$ and $j$.
+
+In order to get to Shor's algorithm, we need to discuss first the features of quantum communication.
+
+\section{No-cloning Theorem and Quantum Teleportation Protocol}
+
+This section is seemingly unrelated, but treats some essential concepts of Quantum Mechanics. To problem is simple: given two quantum subsystems physically separated, how do they exchange information? Which means: if information is stored \textit{here} in a qubit, how do we end up having the same information stored \textit{there} in another qubit?
+
+\subsection{No-cloning Theorem}
+
+We start off by a seemingly unrelated
+\begin{theorem}[No-cloning]
+	Let $\Hilbert^{(\mathrm{ab})}$ be the shared Hilbert space of two subsystems $\mathrm{a}$ and $\mathrm{b}$,
+	\[
+		\Hilbert^{(\mathrm{ab})} \equiv \Hilbert^{(\mathrm{a})} \otimes \Hilbert^{(\mathrm{b})}
+	\]
+	Let $\ket{\psi} \in \Hilbert^{(\mathrm{a})}$ (any generic pure state of subsystem $\mathrm{a}$) at the beginning. Similarly, let $\ket{e} \in \Hilbert^{(\mathrm{b})}$ be the ``blank'' state of the second subsystem. Then, no unitary operator $U$ exists such that
+	\[
+		U \ket{\psi} \otimes \ket{e} = e^{i \alpha\lrR{\psi,e}} \ket{\psi} \otimes \ket{\psi}
+	\]
+	(with $\alpha\lrR{\psi,e}$ a phase) for any $\ket{\psi}$ and $\ket{e}$.
+\end{theorem}
+In other words, \textbf{no quantum copier exists}. This does not mean no specific state can be cloned; instead, no machine can exists able to clone any state from one subsystem to another.
+
+\begin{proof}
+	The proof is utterly simple. Suppose said $U$ exists and take two states $\ket{\psi_1}, \ket{\psi_2} \in \Hilbert^{(\mathrm{a})}$. Then
+	\[
+	\begin{aligned}
+		\braket{\psi_1}{\psi_2} &= \braket{\psi_1}{\psi_2} \braket{e}{e} \\
+		&= \mel{\psi_1 e}{U^\dag U}{\psi_2 e} \\
+		&= e^{-i \lrS{\vphantom{A^A} \alpha\lrR{\psi_1,e}-\alpha\lrR{\psi_2,e} }} \braket{\psi_1}{\psi_2}^2
+	\end{aligned}
+	\]
+	Taking its absolute value,
+	\[
+		\abs{\braket{\psi_1}{\psi_2}} = \abs{\braket{\psi_1}{\psi_2}}^2
+		\quad\implies\quad
+		\abs{\braket{\psi_1}{\psi_2}} \in \lbrace 0,1 \rbrace
+	\]
+	which means: either $\ket{\psi_1} \perp \ket{\psi_2}$ or $\ket{\psi_1} = \ket{\psi_2}$ (up to a phase). So if $U$ is able to copy one particular state, it is not true that it can clone any other state. This is contradiction with the assumptions, thus $U$ does not exist.
+\end{proof}
+
+Now that we know this, it seems that in order to communicate any possible quantum state we cannot clone it. In other words, to get information travel from one subsystem to another the price we pay is the information loss in the ``communicating'' system. This is of course not true for classical architectures: the ability of copying a string of classical bit without destroying it lies at the very basics of classical computation devices.
+
+\subsection{Preliminaries to quantum teleportation}
+
+Two enjoyers of quantum communication, Alice and Bob, want to share quantum information. Alice owns another ``private'' qubit in state $\ket{\psi}$. She wants to apply some protocol ending up with Bob having his qubit in state $\ket{\psi}$. What does she do?
+
+Consider first a $2$-qubits system. A quantum $\Swap$ is efficiently performed by the circuit
+\begin{center}
+	\begin{quantikz}
+		\lstick{$\ket{a}$} & \ctrl{1} & \targ{} & \ctrl{1} & \rstick{$\ket{b}$} \\
+		\lstick{$\ket{b}$} & \targ{} & \ctrl{-1} & \targ{} & \rstick{$\ket{a}$}
+	\end{quantikz}
+\end{center}
+\begin{proof}
+	The circuit is expressed in operators language as
+	\[
+	\begin{multline*}
+		\lrS{\vphantom{A^A} \op{0} \otimes \Id + \op{1} \otimes X}
+		\lrS{\vphantom{A^A} \Id \otimes \op{0} + X \otimes \op{1}}
+		\lrS{\vphantom{A^A} \op{0} \otimes \Id + \op{1} \otimes X} \\
+		= \op{00} + \ketbra{01}{10} + \ketbra{10}{01} + \op{11}
+	\end{multline*}
+	\]
+\end{proof}
+
+\subsection{Shared resources}
+
+\subsection{Quantum Teleportation Protocol}
