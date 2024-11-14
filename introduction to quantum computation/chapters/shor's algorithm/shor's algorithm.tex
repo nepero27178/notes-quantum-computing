@@ -1,8 +1,18 @@
 \chapter{Shor's algorithm}\chaptertoc{}\label{chap:shor's algorithm}
 
-\Comment{to do: intro;}
 
-When the number of logical qubits grows, it is customary to use different bases. A very important orthonormal basis defined for $2$ logical qubits is the \textbf{Bell basis}: starting from the computational basis,
+This chapter is dedicated to two central algorithms in quantum computing — quantum teleportation and Shor's algorithm — which exemplify the practical and theoretical strengths of quantum computation over classical methods. These algorithms demonstrate not only the principles of superposition and entanglement but also their applications in secure communication and cryptography, highlighting the distinct capabilities of quantum technologies.
+
+The first of these, the quantum teleportation protocol, provides a secure method for transferring quantum information through entanglement, bypassing the need for direct physical transmission. This protocol is essential for advancing quantum communication and could play a pivotal role in the development of future quantum networks.
+
+The second, Shor's algorithm, represents a major breakthrough in computational complexity, as it can factor large integers in polynomial time — a task that classical computers cannot achieve efficiently. This capability exposes vulnerabilities in widely -- used cryptographic systems and emphasizes the transformative power of quantum computation.
+
+In the following we'll examine these algorithms in detail, explaining their mechanisms, their implications for computational security, and their significance in the broader landscape of quantum information science.
+
+
+\section{Shor's algorithm}\label{sec:shor algorithm}
+
+When the number of logical qubits grows, it is customary to use different bases. A very important orthonormal basis defined for two logical qubits is the \textbf{Bell basis}: starting from the computational basis,
 \[
 	\mathcal{B}^{(\mathrm{c})} \equiv \lbrace \ket{00},\ket{01},\ket{10},\ket{11} \rbrace
 \]
@@ -79,6 +89,19 @@ In other words, \textbf{no quantum copier exists}. This does not mean no specifi
 	\]
 	which means: either $\ket{\psi_1} \perp \ket{\psi_2}$ or $\ket{\psi_1} = \ket{\psi_2}$ (up to a phase). So if $U$ is able to copy one particular state, it is not true that it can clone any other state. This is contradiction with the assumptions, thus $U$ does not exist.
 \end{proof}
+
+\begin{tcolorbox}[colframe=palette-main, breakable, title=\textbf{Other "no-go" theorems}]
+    The "no-cloning" theorem, along with several others, belongs to the class of so-called \textit{no-go} theorems. To provide a more comprehensive view and for the sake of completeness, we present a brief preview of each one:
+    \begin{itemize}
+        \item[--] No Teleportation. \textit{An arbitrary quantum state cannot be fully represented using classical information. In other words, converting quantum information into classical form is an irreversible process: classical channels are incapable of transmitting quantum information.}
+        \item[--] No Broadcasting. \textit{A single copy of a quantum state cannot be shared with two or more parties.} Since we cannot duplicate a (non-pure) state we cannot share it simoulta; indeed, this theorem does not apply if we are given more than one copy.
+        \item[--] No Deleting. \textit{Given two copies of an arbitrary quantum state, it is impossible to delete one.} This can be thought of as the "time-dual" of no-cloning.
+        \item[--] No Communication. \textit{An entangled state cannot be used to transmit information by measuring a subsystem.} This result is even stronger than no-cloning, as the latter can be derived from it.
+        \item[--] No Hiding. \textit{Quantum information cannot be permanently lost, even through decoherence.} This demonstrates the robustness of quantum states: although quantum information may appear lost, it remains conserved by nature.
+    \end{itemize}
+    These mutually counterintuitive theorems may seem confusing at first. Rather than being discouraged, we encourage further exploration into their details. This collection of results exemplifies how the quantum world often exceeds the sum of its parts. For instance, the quantum teleportation protocol enables the transfer of quantum information by leveraging both "no-teleportation" and "no-communication."
+\end{tcolorbox}
+
 
 Now that we know this, it seems that in order to communicate any possible quantum state we cannot clone it. In other words, to get information travel from one subsystem to another the price we pay is the information loss in the ``communicating'' system. This is of course not true for classical architectures: the ability of copying a string of classical bit without destroying it lies at the very basics of classical computation devices.
 
